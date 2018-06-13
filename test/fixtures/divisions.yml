@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  division: MyString
+  quantiy: MyString
+  standard: one
+
+two:
+  division: MyString
+  quantiy: MyString
+  standard: two

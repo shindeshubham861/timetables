@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lecture: MyString
+  standard: MyString
+  division: MyString
+  subject: one
+  teacher: one
+
+two:
+  lecture: MyString
+  standard: MyString
+  division: MyString
+  subject: two
+  teacher: two

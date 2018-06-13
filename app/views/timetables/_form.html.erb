@@ -1,0 +1,42 @@
+<%= form_with(model: timetable, local: true) do |form| %>
+  <% if timetable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(timetable.errors.count, "error") %> prohibited this timetable from being saved:</h2>
+
+      <ul>
+      <% timetable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lecture %>
+    <%= form.text_field :lecture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :standard_id%>
+    <%=form.collection_select(:standard_id, Standard.all, :id,:name, :include_blank => "select standard") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :division_id %>
+    <%=form.collection_select(:division_id, Division.all, :id,:division, :include_blank => "select division") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subject_id %>
+   <%=form.collection_select(:subject_id, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+  </div>
+
+  <div class="field">
+    <%= form.label :teacher_id %>
+     <%=form.collection_select(:teacher_id, Teacher.all, :id,:name, :include_blank => "select teacher") %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
