@@ -24,8 +24,16 @@ background-color: #11ffee00;  /* Fully transparent */
     height: auto;
     display: block;
     overflow: visible;
-    padding: 0;
+    padding: 23px;
+   
 }
+li.single-event{
+
+    top: 199px;
+    height:96px ;
+    padding-top: 10px;
+}
+
 </style>
 </head>
 <body>
@@ -37,6 +45,7 @@ background-color: #11ffee00;  /* Fully transparent */
       <li><span>09:00</span></li>
       <li><span>09:30</span></li>
       <li><span>10:00</span></li>
+      <li><span>10:02</span></li>
       <li><span>10:30</span></li>
       <li><span>11:00</span></li>
       <li><span>11:30</span></li>
@@ -52,29 +61,29 @@ background-color: #11ffee00;  /* Fully transparent */
         <div class="top-info"><span>Monday</span></div>
 
         <ul>
-        <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4"><center>
+        <li class="single-event" data-start="09:00" data-end="09:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
-        <% end %></li>
+        <% end %></li><&nbsp;>
          
-        <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-3"><center>
+        <li class="single-event" data-start="10:00" data-end="10:57" data-content="event-restorative-yoga" data-event="event-4"><center>
+        <%= form_with(model: Subject, local: true) do |form| %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+        <% end %><br>
+         <%= form_with(model: Teacher, local: true) do |form| %>
+         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+        <% end %></li><br>
+        <li class="single-event" data-start="11:00" data-end="11:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
-        <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-2"><center>
-        <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
-        <% end %><br>
-         <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
-        <% end %></li>
-        <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-1"><center>
+        <li class="single-event" data-start="12:00" data-end="12:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
@@ -86,12 +95,13 @@ background-color: #11ffee00;  /* Fully transparent */
      
         </ul>
       </li>
+      s
 
       <li class="events-group">
         <div class="top-info"><span>Tuesday</span></div>
 
         <ul>   
-       <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4"><center>
+       <li class="single-event" data-start="09:00" data-end="09:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
@@ -99,21 +109,21 @@ background-color: #11ffee00;  /* Fully transparent */
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
          
-        <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-3"><center>
+        <li class="single-event" data-start="10:00" data-end="10:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
-        <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-2"><center>
+        <li class="single-event" data-start="11:00" data-end="11:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
-        <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-1"><center>
+        <li class="single-event" data-start="12:00" data-end="12:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
@@ -128,7 +138,7 @@ background-color: #11ffee00;  /* Fully transparent */
         <div class="top-info"><span>Wednesday</span></div>
 
         <ul>
-          <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4"><center>
+          <li class="single-event" data-start="09:00" data-end="09:57" data-content="event-restorative-yoga" data-event="event-2"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
@@ -136,21 +146,21 @@ background-color: #11ffee00;  /* Fully transparent */
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
          
-        <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-3"><center>
+        <li class="single-event" data-start="10:00" data-end="10:57" data-content="event-restorative-yoga" data-event="event-2"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
-        <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-2"><center>
+        <li class="single-event" data-start="11:00" data-end="11:57" data-content="event-restorative-yoga" data-event="event-2"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
-        <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-1"><center>
+        <li class="single-event" data-start="12:00" data-end="12:57" data-content="event-restorative-yoga" data-event="event-2"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
@@ -166,7 +176,7 @@ background-color: #11ffee00;  /* Fully transparent */
         <div class="top-info"><span>Thursday</span></div>
 
         <ul>
-        <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4"><center>
+        <li class="single-event" data-start="09:00" data-end="09:57" data-content="event-restorative-yoga" data-event="event-1"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
@@ -174,21 +184,21 @@ background-color: #11ffee00;  /* Fully transparent */
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
          
-        <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-3"><center>
+        <li class="single-event" data-start="10:00" data-end="10:57" data-content="event-restorative-yoga" data-event="event-1"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
-        <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-2"><center>
+        <li class="single-event" data-start="11:00" data-end="11:57" data-content="event-restorative-yoga" data-event="event-1"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
-        <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-1"><center>
+        <li class="single-event" data-start="12:00" data-end="12:57" data-content="event-restorative-yoga" data-event="event-1"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
@@ -204,7 +214,7 @@ background-color: #11ffee00;  /* Fully transparent */
         <div class="top-info"><span>Friday</span></div>
 
         <ul>
-         <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4"><center>
+         <li class="single-event" data-start="09:00" data-end="09:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
@@ -212,21 +222,21 @@ background-color: #11ffee00;  /* Fully transparent */
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
          
-        <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-3"><center>
+        <li class="single-event" data-start="10:00" data-end="10:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
-        <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-2"><center>
+        <li class="single-event" data-start="11:00" data-end="11:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
-        <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-1"><center>
+        <li class="single-event" data-start="12:00" data-end="12:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
@@ -241,7 +251,7 @@ background-color: #11ffee00;  /* Fully transparent */
         <div class="top-info"><span>saturday</span></div>
 
         <ul >
-         <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4"><center>
+         <li class="single-event" data-start="09:00" data-end="09:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
@@ -249,21 +259,21 @@ background-color: #11ffee00;  /* Fully transparent */
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
          
-        <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-3"><center>
+        <li class="single-event" data-start="10:00" data-end="10:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
-        <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-2"><center>
+        <li class="single-event" data-start="11:00" data-end="11:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
         <% end %></li>
-        <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-1"><center>
+        <li class="single-event" data-start="12:00" data-end="12:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
          <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
         <% end %><br>
