@@ -39,6 +39,7 @@ li.single-event{
 <body>
 
 
+
 <div class="cd-schedule loading">
   <div class="timeline">
     <ul>
@@ -54,7 +55,7 @@ li.single-event{
       <li><span>13:00</span></li>
     </ul>
   </div> <!-- .timeline -->
-
+<!-- <h1><p>Click on this paragraph.</p></h1> -->
   <div class="events">
     <ul>
       <li class="events-group">
@@ -63,72 +64,71 @@ li.single-event{
         <ul>
         <li class="single-event" data-start="09:00" data-end="09:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ms1"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
-        <% end %></li><&nbsp;>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "mt1"})%>
+        <% end %></li>
          
         <li class="single-event" data-start="10:00" data-end="10:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ms2"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "mt2"})%>
         <% end %></li><br>
         <li class="single-event" data-start="11:00" data-end="11:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ms3"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "mt3"})%>
         <% end %></li>
         <li class="single-event" data-start="12:00" data-end="12:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ms4"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "mt4"})%>
         <% end %></li>
         </center>
 
      
         </ul>
       </li>
-      s
-
+      
       <li class="events-group">
         <div class="top-info"><span>Tuesday</span></div>
 
         <ul>   
        <li class="single-event" data-start="09:00" data-end="09:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ts1"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "tt1"})%>
         <% end %></li>
          
         <li class="single-event" data-start="10:00" data-end="10:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ts2"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "tt2"})%>
         <% end %></li>
         <li class="single-event" data-start="11:00" data-end="11:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ts3"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "tt3"})%>
         <% end %></li>
         <li class="single-event" data-start="12:00" data-end="12:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ts4"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "tt4"})%>
         <% end %></li>
         </center>
                </ul>
@@ -140,32 +140,32 @@ li.single-event{
         <ul>
           <li class="single-event" data-start="09:00" data-end="09:57" data-content="event-restorative-yoga" data-event="event-2"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ws1"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "wt1"})%>
         <% end %></li>
          
         <li class="single-event" data-start="10:00" data-end="10:57" data-content="event-restorative-yoga" data-event="event-2"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ws2"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "wt2"})%>
         <% end %></li>
         <li class="single-event" data-start="11:00" data-end="11:57" data-content="event-restorative-yoga" data-event="event-2"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ws3"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "wt3"})%>
         <% end %></li>
         <li class="single-event" data-start="12:00" data-end="12:57" data-content="event-restorative-yoga" data-event="event-2"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ws4"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "wt4"})%>
         <% end %></li>
         </center>
 
@@ -178,32 +178,32 @@ li.single-event{
         <ul>
         <li class="single-event" data-start="09:00" data-end="09:57" data-content="event-restorative-yoga" data-event="event-1"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ths1"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "tht1"})%>
         <% end %></li>
          
         <li class="single-event" data-start="10:00" data-end="10:57" data-content="event-restorative-yoga" data-event="event-1"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ths2"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "tht2"})%>
         <% end %></li>
         <li class="single-event" data-start="11:00" data-end="11:57" data-content="event-restorative-yoga" data-event="event-1"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ths3"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "thw3"})%>
         <% end %></li>
         <li class="single-event" data-start="12:00" data-end="12:57" data-content="event-restorative-yoga" data-event="event-1"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ths4"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "tht4"})%>
         <% end %></li>
         </center>
        
@@ -216,32 +216,32 @@ li.single-event{
         <ul>
          <li class="single-event" data-start="09:00" data-end="09:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "fs1"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "ft1"})%>
         <% end %></li>
          
         <li class="single-event" data-start="10:00" data-end="10:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "fs2"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "ft2"})%>
         <% end %></li>
         <li class="single-event" data-start="11:00" data-end="11:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "fs3"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "ft3"})%>
         <% end %></li>
         <li class="single-event" data-start="12:00" data-end="12:57" data-content="event-restorative-yoga" data-event="event-3"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "fs4"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "ft4"})%>
         <% end %></li>
         </center>
         </ul>
@@ -253,43 +253,138 @@ li.single-event{
         <ul >
          <li class="single-event" data-start="09:00" data-end="09:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ss1"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "st1"})%>
         <% end %></li>
          
         <li class="single-event" data-start="10:00" data-end="10:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ss2"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "st2"})%>
         <% end %></li>
         <li class="single-event" data-start="11:00" data-end="11:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ss3"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "st3"})%>
         <% end %></li>
         <li class="single-event" data-start="12:00" data-end="12:57" data-content="event-restorative-yoga" data-event="event-4"><center>
         <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:class => "form-control"}, {:id => "ss4"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:class => "form-control"}, {:id => "st4"})%>
         <% end %></li>
         </center>
         </ul>
       </li>
     </ul>
   </div>
+
 <!-- 
   ========================================================= -->
        
 
   </div>
+  <button onclick="save()">save</button>
+ <script type="text/javascript">
+//  var teacher = [];
+//     var subject = [];
+
+// function save(){
+//       for (var i = 1; i <=4; i++) {
+//         var tea=[];
+//         var tea = document.getElementById('mt'+i);
+
+//         alert(tea);
+
+
+//     }
+// }
+    
+
+
+ $(function ()  {
+for (var i = 1; i <= 4; i++) {
+
+    var ms= "#ms"+i;
+    $(ms).on('change',function(){
+        var monday=[];     
+
+              monday = $("ms option:selected").text();
+
+        alert(monday);
+
+        // document.getElementById(go)=document.write(monday);
+    });
+
+
+
+}
+});
+
+    
+
+
+         
+
+
+      
+
+     // body...
+
+
+
+    
+
+   
+
+
+
+
+
+
+    //     var table = document.getElementsByTagName("table")[0];
+    //     var tbody = table.getElementsByTagName("tbody")[0];
+    //     tbody.onclick = function (e) {
+    //         e = e || window.event;
+    //         var data = [];
+    //         var target = e.srcElement || e.target;
+    //         while (target && target.nodeName !== "TR") {
+    //             target = target.parentNode;
+    //         }
+    //         if (target) {
+    //             var cells = target.getElementsByTagName("td");
+    //             for (var i = 0; i < cells.length; i++) {
+    //                 data.push(cells[i].innerHTML);
+    //             }
+    //         }
+    //         var trnode = document.createElement("tr");
+          
+    //         for(var i = 0; i < data.length; i++){
+    //             var tdnode = document.createElement("td");
+    //             var textnode = document.createTextNode(data[i]);
+    //             tdnode.appendChild(textnode);
+    //             trnode.appendChild(tdnode);
+    //         }
+          
+        
+    //         alert(data[1].split("<h1>")[1].split("</h1>")[0]);
+    //         alert(data[2].split("<h1>")[1].split("</h1>")[0]);
+    //         var a = data[1].split("<h1>")[1].split("</h1>")[0];
+    //         var b = data[2].split("<h1>")[1].split("</h1>")[0];
+    //         sol.push(a);
+    //         sol.push(b);
+    //         alert(sol);
+
+    // }
+
+</script>
 
   <div class="cover-layer"></div>
 </div> <!-- .cd-schedule -->
