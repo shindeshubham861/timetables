@@ -9,9 +9,78 @@
   <link rel="stylesheet" href="/assets/style.css"> <!-- Resource style -->
   
   <title>Schedule Template | CodyHouse</title>
+  <style type="text/css">
+    .hi{
+background-color: #11ffee00;  /* Fully transparent */
+
+}
+.cd-schedule .events .events-group {
+    width: 16%;
+    float: left;
+    border: 1px solid #EAEAEA;
+    margin-bottom: 0;
+}
+.cd-schedule .events .events-group > ul {
+    height: auto;
+    display: block;
+    overflow: visible;
+    padding: 23px;
+   
+}
+li.single-event{
+
+    top: 199px;
+    height:96px ;
+    
+}
+div.absolute {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 190px;
+    width: 200px;
+    height: 50px;
+    /*border: 3px solid #73AD21;*/
+}
+div.absolte {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 320px;
+    width: 200px;
+    height: 50px;
+    /*border: 3px solid #73AD21;*/
+}
+</style>
 </head>
 <body>
-<%= render 'form', subject: @subject %>
+<div class="absolute">
+    
+<select  id="dd1">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+</select>
+
+</div>
+<div class="absolte">
+<select  id="ss1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+         <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+         <option>9</option>
+        <option>10</option>
+        
+</select>
+
+</div>
+
 
 <div class="cd-schedule loading">
   <div class="timeline">
@@ -25,7 +94,7 @@
       <li><span>12:00</span></li>
       <li><span>12:30</span></li>
       <li><span>13:00</span></li>
-      <li><span>13:30</span></li>
+  <!--     <li><span>13:30</span></li>
       <li><span>14:00</span></li>
       <li><span>14:30</span></li>
       <li><span>15:00</span></li>
@@ -34,7 +103,7 @@
       <li><span>16:30</span></li>
       <li><span>17:00</span></li>
       <li><span>17:30</span></li>
-      <li><span>18:00</span></li>
+      <li><span>18:00</span></li> -->
     </ul>
   </div> <!-- .timeline -->
 
@@ -42,23 +111,116 @@
     <ul>
       <li class="events-group">
         <div class="top-info"><span>Monday</span></div>
+         
 
         <ul>
+         <li class="single-event" data-start="09:00" data-end="10:00"  data-event="event-4">
+            
+               <%=Timetable.find(@mondays.first).teacher%><br>
 
+              <%=Timetable.find(@mondays.first).subject%>
+
+             
+          
+          </li>
+           <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+           <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+           <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0"
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+         
         </ul>
       </li>
 
       <li class="events-group">
         <div class="top-info"><span>Tuesday</span></div>
 
-        <ul>        </ul>
+        <ul>
+         <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name"><%=Timetable.first.teacher%>
+              </em>
+            </a>
+          </li>
+           <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+           <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+           <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+        </ul>
       </li>
 
       <li class="events-group">
         <div class="top-info"><span>Wednesday</span></div>
 
         <ul>
-          <li class="single-event" data-start="09:00" data-end="09.30" data-content="event-restorative-yoga" data-event="event-4">
+        <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name"><%=Timetable.first.teacher%>
+              </em>
+            </a>
+          </li>
+           <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+           <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+           <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+
+
+        </ul>
+      </li>
+
+      <li class="events-group">
+        <div class="top-info"><span>Thursday</span></div>
+
+        <ul>
+         <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name"><%=Timetable.first.teacher%>
+              </em>
+            </a>
+          </li>
+           <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+           <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+           <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
             <a href="#0">
               <em class="event-name">Restorative Yoga</em>
             </a>
@@ -68,16 +230,31 @@
       </li>
 
       <li class="events-group">
-        <div class="top-info"><span>Thursday</span></div>
-
-        <ul>
-        </ul>
-      </li>
-
-      <li class="events-group">
         <div class="top-info"><span>Friday</span></div>
 
         <ul>
+         <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name"><%=Timetable.first.teacher%>
+              </em>
+            </a>
+          </li>
+           <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+           <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+           <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+
         </ul>
       </li>
 
@@ -85,32 +262,60 @@
         <div class="top-info"><span>saturday</span></div>
 
         <ul>
+         <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <h3>
+              </h3> 
+              
+            </a>
+          </li>
+           <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+           <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
+           <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
+            <a href="#0">
+              <em class="event-name">Restorative Yoga</em>
+            </a>
+          </li>
         </ul>
       </li>
     </ul>
   </div>
+<!-- 
+  <div class="event-modal"> -->
+   
+<script type="text/javascript">
+  var division;
+ var standard;
 
-  <div class="event-modal">
-    <header class="header">
-      <div class="content"><a href="#0" class="close">Close</a>
-        <span class="event-date"></span>
-        <h3 class="event-name"></h3>
-        <h3><%= Teacher.name %> 
-      </div>
-
-      <div class="header-bg"></div>
-    </header>
-
-    <div class="body">
-      <div class="event-info"></div>
-      <div class="body-bg"></div>
-    </div>
+ $("#d1").on('change',function(){
+           division=$("#d1 option:selected").text();
+    });
+    $("#s1").on('change',function(){
+            standard=$("#s1 option:selected").html();
+    });
 
 
-  </div>
 
-  <div class="cover-layer"></div>
-</div> <!-- .cd-schedule -->
+
+
+
+
+
+
+
+
+</script>
+
+
+<!-- .cd-schedule -->
 <script src="/assets/modernizr.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script>

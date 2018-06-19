@@ -49,12 +49,11 @@ ActiveRecord::Schema.define(version: 2018_06_12_114350) do
     t.string "lecture"
     t.string "standard"
     t.string "division"
-    t.integer "subject_id"
-    t.integer "teacher_id"
+    t.string "subject"
+    t.string "teacher"
+    t.string "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subject_id"], name: "index_timetables_on_subject_id"
-    t.index ["teacher_id"], name: "index_timetables_on_teacher_id"
   end
 
 end

@@ -1,11 +1,13 @@
 class TimetablesController < ApplicationController
   before_action :set_timetable, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /timetables
   # GET /timetables.json
   def index
     @timetable = Timetable.new
     @timetables = Timetable.all
+
 
   end
 
@@ -33,6 +35,8 @@ class TimetablesController < ApplicationController
       if @timetable.save
         format.html { redirect_to @timetable, notice: 'Timetable was successfully created.' }
         format.json { render :show, status: :created, location: @timetable }
+        
+
       else
         format.html { render :new }
         format.json { render json: @timetable.errors, status: :unprocessable_entity }
@@ -68,6 +72,8 @@ class TimetablesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_timetable
       @timetable = Timetable.find(params[:id])
+       @timetabel=Timetable.find(138).teacher
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

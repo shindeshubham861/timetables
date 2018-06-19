@@ -6,6 +6,12 @@ class SubjectsController < ApplicationController
   def index
     @subjects = Subject.all
     @subject = Subject.new
+  @mondays=Timetable.where(day: "monday",standard: "2",division: "B").ids
+  @tuesdays=Timetable.where(day: "tuesday",standard: "standard",division: "division").ids
+  @wednesdays=Timetable.where(day: "Wednesday",standard: "standard",division: "division").ids
+  @thursdays=Timetable.where(day: "Thursday",standard: "standard",division: "division").ids
+  @fridays=Timetable.where(day: "Friday",standard: "standard",division: "division").ids
+  @saturdays=Timetable.where(day: "saturday",standard: "standard",division: "division").ids
 
 
   end

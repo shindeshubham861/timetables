@@ -33,10 +33,55 @@ li.single-event{
     height:96px ;
     padding-top: 10px;
 }
-
+div.absolute {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 190px;
+    width: 200px;
+    height: 50px;
+    /*border: 3px solid #73AD21;*/
+}
+div.absolte {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 320px;
+    width: 200px;
+    height: 50px;
+    /*border: 3px solid #73AD21;*/
+}
 </style>
 </head>
 <body>
+<div class="absolute">
+    
+<select  id="d1">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+</select>
+
+</div>
+<div class="absolte">
+<select  id="s1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+         <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+         <option>9</option>
+        <option>10</option>
+        
+</select>
+
+</div>
+
+
 
 
 
@@ -306,7 +351,17 @@ li.single-event{
 
 //     }
 // }
- 
+ var division;
+ var standard;
+
+ $("#d1").on('change',function(){
+           division=$("#d1 option:selected").text();
+    });
+    $("#s1").on('change',function(){
+            standard=$("#s1 option:selected").html();
+    });
+
+
 
    
 var mondays=[]; 
@@ -525,6 +580,9 @@ function save(){
 
    var data =
 {
+    "division": division,
+    "standard": standard, 
+
     "monday": [
         { "ms1": mondays[0]},
         { "ms2": mondays[1]},
@@ -589,45 +647,38 @@ function save(){
 };
 
 alert(JSON.stringify(data));
+
+$.ajax({
+        url : "/timetable",
+        type : "post",
+        data : { data_value: data }
+    });
+
+
 }
 
 
-    //     var table = document.getElementsByTagName("table")[0];
-    //     var tbody = table.getElementsByTagName("tbody")[0];
-    //     tbody.onclick = function (e) {
-    //         e = e || window.event;
-    //         var data = [];
-    //         var target = e.srcElement || e.target;
-    //         while (target && target.nodeName !== "TR") {
-    //             target = target.parentNode;
-    //         }
-    //         if (target) {
-    //             var cells = target.getElementsByTagName("td");
-    //             for (var i = 0; i < cells.length; i++) {
-    //                 data.push(cells[i].innerHTML);
-    //             }
-    //         }
-    //         var trnode = document.createElement("tr");
-          
-    //         for(var i = 0; i < data.length; i++){
-    //             var tdnode = document.createElement("td");
-    //             var textnode = document.createTextNode(data[i]);
-    //             tdnode.appendChild(textnode);
-    //             trnode.appendChild(tdnode);
-    //         }
-          
-        
-    //         alert(data[1].split("<h1>")[1].split("</h1>")[0]);
-    //         alert(data[2].split("<h1>")[1].split("</h1>")[0]);
-    //         var a = data[1].split("<h1>")[1].split("</h1>")[0];
-    //         var b = data[2].split("<h1>")[1].split("</h1>")[0];
-    //         sol.push(a);
-    //         sol.push(b);
-    //         alert(sol);
 
-    // }
 
+// var data;
+//  $.ajax('/timetable', {
+//             type: 'POST',  // http method
+//             data: { data },  // data to submit
+//             success: function (data, status, xhr) {
+//                 alert(data);
+//                 // obj = JSON.parse(data);
+//                  // alert(data.part[0].part_name);
+//             },
+//             error: function (jqXhr, textStatus, errorMessage) {
+//                     $('p').append('Error' + errorMessage);
+//                 }
+//         });
 </script>
+
+<script type="text/javascript">
+ 
+
+   </script>
 
   <div class="cover-layer"></div>
 </div> <!-- .cd-schedule -->
