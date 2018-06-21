@@ -14,6 +14,7 @@
 background-color: #11ffee00;  /* Fully transparent */
 
 }
+@media (min-width:961px)  { 
 .cd-schedule .events .events-group {
     width: 16%;
     float: left;
@@ -27,6 +28,23 @@ background-color: #11ffee00;  /* Fully transparent */
     padding: 23px;
    
 }
+}
+@media(only screen and (min-width:769px)){
+.cd-schedule .events .events-group {
+    width: 16%;
+    float: left;
+    border: 1px solid #EAEAEA;
+    margin-bottom: 0;
+}
+.cd-schedule .events .events-group > ul {
+    height: auto;
+    display: block;
+    overflow: visible;
+    padding: 23px;
+   
+}
+}
+
 li.single-event{
 
     top: 199px;
@@ -51,12 +69,21 @@ div.absolte {
     height: 50px;
     /*border: 3px solid #73AD21;*/
 }
+.cd-schedule .event-date {
+    font-size: 1.4rem;
+    opacity: .7;
+    line-height: 1.2;
+    margin-bottom: .2em;
+    display: none;
+}
 </style>
 </head>
 <body>
+<button onclick="get()">get</button>
 <div class="absolute">
     
 <select  id="dd1">
+        <option>Division</option>
         <option>A</option>
         <option>B</option>
         <option>C</option>
@@ -66,6 +93,7 @@ div.absolte {
 </div>
 <div class="absolte">
 <select  id="ss1">
+        <option>Standard</option>
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -80,12 +108,15 @@ div.absolte {
 </select>
 
 </div>
+<button id="go" onclick="go()">go</button>
+<input type="text" name="Teacher" style="margin-right: 238px;" id="ip1">
+
 
 
 <div class="cd-schedule loading">
   <div class="timeline">
     <ul>
-      <li><span>09:00</span></li>
+      <li><span id="a1">09:00</span></li>
       <li><span>09:30</span></li>
       <li><span>10:00</span></li>
       <li><span>10:30</span></li>
@@ -115,28 +146,38 @@ div.absolte {
 
         <ul>
          <li class="single-event" data-start="09:00" data-end="10:00"  data-event="event-4">
-            
-               <%=Timetable.find(@mondays.first).teacher%><br>
+            <a href="#0">
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
 
-              <%=Timetable.find(@mondays.first).subject%>
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
 
-             
+             </a>
           
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           <a href="#0">
+           <em class="event-name"><%=Timetable.find(@mondays.second).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.second).subject%></em>
+               </a>
           </li>
+
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           <a href="#0">
+           
+          <em class="event-name"><%=Timetable.find(@mondays.third).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.third).subject%></em>
+               </a>
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0"
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           <a href="#0">
+           
+             <em class="event-name"><%=Timetable.find(@mondays.fourth).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.fourth).subject%></em>
+
+           </a>
           </li>
          
         </ul>
@@ -147,25 +188,32 @@ div.absolte {
 
         <ul>
          <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name"><%=Timetable.first.teacher%>
-              </em>
-            </a>
+            
+           <em class="event-name"><%=Timetable.find(@tuesdays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@tuesdays.first).subject%></em>
+            
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@tuesdays.second).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@tuesdays.second).subject%></em>
+           
           </li>
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@tuesdays.third).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@tuesdays.third).subject%></em>
+           
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@tuesdays.fourth).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@tuesdays.fourth).subject%></em>
+           
           </li>
         </ul>
       </li>
@@ -175,25 +223,32 @@ div.absolte {
 
         <ul>
         <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name"><%=Timetable.first.teacher%>
-              </em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@wednesdays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@wednesdays.first).subject%></em>
+           
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@wednesdays.second).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@wednesdays.second).subject%></em>
+           
           </li>
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@wednesdays.third).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@wednesdays.third).subject%></em>
+           
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@wednesdays.fourth).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@wednesdays.fourth).subject%></em>
+           
           </li>
 
 
@@ -205,25 +260,32 @@ div.absolte {
 
         <ul>
          <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name"><%=Timetable.first.teacher%>
-              </em>
-            </a>
+           
+             <em class="event-name"><%=Timetable.find(@thursdays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@thursdays.first).subject%></em>
+           
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@thursdays.second).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@thursdays.second).subject%></em>
+           
           </li>
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@thursdays.third).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@thursdays.third).subject%></em>
+           
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@thursdays.fourth).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@thursdays.fourth).subject%></em>
+           
           </li>
 
         </ul>
@@ -234,25 +296,32 @@ div.absolte {
 
         <ul>
          <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name"><%=Timetable.first.teacher%>
-              </em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@fridays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@fridays.first).subject%></em>
+           
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@fridays.second).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@fridays.second).subject%></em>
+           
           </li>
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@fridays.third).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@fridays.third).subject%></em>
+           
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@fridays.fourth).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@fridays.fourth).subject%></em>
+           
           </li>
 
         </ul>
@@ -263,31 +332,61 @@ div.absolte {
 
         <ul>
          <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <h3>
-              </h3> 
+           
+             <em class="event-name"><%=Timetable.find(@saturdays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@saturdays.first).subject%></em>
               
-            </a>
+           
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@saturdays.second).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@saturdays.second).subject%></em>
+           
           </li>
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@saturdays.third).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@saturdays.third).subject%></em>
+           
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-            <a href="#0">
-              <em class="event-name">Restorative Yoga</em>
-            </a>
+           
+              <em class="event-name"><%=Timetable.find(@saturdays.fourth).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@saturdays.fourth).subject%></em>
+           
           </li>
         </ul>
       </li>
     </ul>
   </div>
+
+
+  <div class="event-modal">
+    <header class="header">
+      <div class="content">
+        <span class="event-date"></span>
+        <h3 class="event-name"></h3>
+      </div>
+
+      <div class="header-bg"></div>
+    </header>
+
+    <div class="body">
+      <div class="event-info"></div>
+      <div class="body-bg"></div>
+    </div>
+
+    <a href="#0" class="close">Close</a>
+  </div>
+
+  <div class="cover-layer"></div>
+</div>
+
 <!-- 
   <div class="event-modal"> -->
    
@@ -303,8 +402,23 @@ div.absolte {
     });
 
 
+function go(){
+  var b=$("#dd1 option:selected").text();
+  var a=$("#ss1 option:selected").text();
+
+  location.href="/subjects?"+"standard="+a+"&division="+b;
+}
 
 
+
+
+function get(){
+var ip= $("#ip1").val();
+  
+  
+
+alert(ip);
+}
 
 
 

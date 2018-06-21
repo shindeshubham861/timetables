@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  get 'teacherdata/index'
 	get 'timetable/table'
 
   resources :divisions

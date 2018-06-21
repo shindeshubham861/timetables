@@ -4,14 +4,17 @@ class SubjectsController < ApplicationController
   # GET /subjects
   # GET /subjects.json
   def index
+    # byebug
     @subjects = Subject.all
     @subject = Subject.new
-  @mondays=Timetable.where(day: "monday",standard: "2",division: "B").ids
-  @tuesdays=Timetable.where(day: "tuesday",standard: "standard",division: "division").ids
-  @wednesdays=Timetable.where(day: "Wednesday",standard: "standard",division: "division").ids
-  @thursdays=Timetable.where(day: "Thursday",standard: "standard",division: "division").ids
-  @fridays=Timetable.where(day: "Friday",standard: "standard",division: "division").ids
-  @saturdays=Timetable.where(day: "saturday",standard: "standard",division: "division").ids
+    @std = params[:standard]
+    @div = params[:division]
+  @mondays=Timetable.where(day: "monday",standard: @std,division: @div).ids
+  @tuesdays=Timetable.where(day: "tuesday",standard: @std,division: @div).ids
+  @wednesdays=Timetable.where(day: "Wednesday",standard: @std,division: @div).ids
+  @thursdays=Timetable.where(day: "Thursday",standard: @std,division: @div).ids
+  @fridays=Timetable.where(day: "Friday",standard: @std,division: @div).ids
+  @saturdays=Timetable.where(day: "saturday",standard: @std,division: @div).ids
 
 
   end

@@ -72,7 +72,7 @@ class TimetablesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_timetable
       @timetable = Timetable.find(params[:id])
-       @timetabel=Timetable.find(138).teacher
+       
 
     end
 

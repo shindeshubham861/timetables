@@ -13,18 +13,86 @@
     .hi{
 background-color: #11ffee00;  /* Fully transparent */
 
-/* Special keyword values */
-
 }
-  </style>
+.cd-schedule .events .events-group {
+    width: 16%;
+    float: left;
+    border: 1px solid #EAEAEA;
+    margin-bottom: 0;
+}
+.cd-schedule .events .events-group > ul {
+    height: auto;
+    display: block;
+    overflow: visible;
+    padding: 23px;
+   
+}
+li.single-event{
+
+    top: 199px;
+    height:96px ;
+    
+}
+div.absolute {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 190px;
+    width: 200px;
+    height: 50px;
+    /*border: 3px solid #73AD21;*/
+}
+div.absolte {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 320px;
+    width: 200px;
+    height: 50px;
+    /*border: 3px solid #73AD21;*/
+}
+.cd-schedule .event-date {
+    font-size: 1.4rem;
+    opacity: .7;
+    line-height: 1.2;
+    margin-bottom: .2em;
+    display: none;
+}
+</style>
 </head>
 <body>
+<div class="absolute">
+    
+<select  id="dd1">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option>D</option>
+</select>
+
+</div>
+<div class="absolte">
+<select  id="ss1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+         <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+         <option>9</option>
+        <option>10</option>
+        
+</select>
+
+</div>
 
 
 <div class="cd-schedule loading">
   <div class="timeline">
     <ul>
-      <li><span>09:00</span></li>
+      <li><span id="a1">09:00</span></li>
       <li><span>09:30</span></li>
       <li><span>10:00</span></li>
       <li><span>10:30</span></li>
@@ -33,7 +101,7 @@ background-color: #11ffee00;  /* Fully transparent */
       <li><span>12:00</span></li>
       <li><span>12:30</span></li>
       <li><span>13:00</span></li>
-      <li><span>13:30</span></li>
+  <!--     <li><span>13:30</span></li>
       <li><span>14:00</span></li>
       <li><span>14:30</span></li>
       <li><span>15:00</span></li>
@@ -42,7 +110,7 @@ background-color: #11ffee00;  /* Fully transparent */
       <li><span>16:30</span></li>
       <li><span>17:00</span></li>
       <li><span>17:30</span></li>
-      <li><span>18:00</span></li>
+      <li><span>18:00</span></li> -->
     </ul>
   </div> <!-- .timeline -->
 
@@ -50,51 +118,115 @@ background-color: #11ffee00;  /* Fully transparent */
     <ul>
       <li class="events-group">
         <div class="top-info"><span>Monday</span></div>
+         
 
         <ul>
-        <li ><center>
-        <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
-        <% end %>
-        </center></li><br>
-         <li><center> <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
-        <% end %></li><br>
-        </center>
+         <li class="single-event" data-start="09:00" data-end="10:00"  data-event="event-4">
+            <a href="#0">
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
 
-     
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+
+             </a>
+          
+          </li>
+           <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
+           <a href="#0">
+           <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+               </a>
+          </li>
+
+           <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
+           <a href="#0">
+           
+          <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+               </a>
+          </li>
+           <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
+           <a href="#0">
+           
+             <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+
+           </a>
+          </li>
+         
         </ul>
       </li>
 
       <li class="events-group">
         <div class="top-info"><span>Tuesday</span></div>
 
-        <ul>   
-       <li ><center>
-        <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
-        <% end %>
-        </center></li><br>
-         <li><center> <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
-        <% end %></li><br>
-        </center>
-               </ul>
+        <ul>
+         <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
+            
+           <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+            
+          </li>
+           <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+        </ul>
       </li>
 
       <li class="events-group">
         <div class="top-info"><span>Wednesday</span></div>
 
         <ul>
-          <li ><center>
-        <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
-        <% end %>
-        </center></li><br>
-         <li><center> <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
-        <% end %></li><br>
-        </center>
+        <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+
 
         </ul>
       </li>
@@ -103,16 +235,35 @@ background-color: #11ffee00;  /* Fully transparent */
         <div class="top-info"><span>Thursday</span></div>
 
         <ul>
-          <li ><center>
-        <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
-        <% end %>
-        </center></li><br>
-         <li><center> <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
-        <% end %></li><br>
-        </center>
-       
+         <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+             <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+
         </ul>
       </li>
 
@@ -120,42 +271,124 @@ background-color: #11ffee00;  /* Fully transparent */
         <div class="top-info"><span>Friday</span></div>
 
         <ul>
-        <li ><center>
-        <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
-        <% end %>
-        </center></li><br>
-         <li><center> <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
-        <% end %></li><br>
-        </center>
+         <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+
         </ul>
       </li>
 
       <li class="events-group">
         <div class="top-info"><span>saturday</span></div>
 
-        <ul class="hi">
-         <li ><center>
-        <%= form_with(model: Subject, local: true) do |form| %>
-         <%=form.collection_select(:model, Subject.all, :id,:s_name, :include_blank => "select subject") %>
-        <% end %>
-        </center></li><br>
-         <li><center> <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name, :include_blank => "select teacher")%>
-        <% end %></li><br>
-        </center>
+        <ul>
+         <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+             <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+              
+           
+          </li>
+           <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
+           <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
+           
+              <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
+
+               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+           
+          </li>
         </ul>
       </li>
     </ul>
   </div>
 
+  <div class="event-modal">
+    <header class="header">
+      <div class="content">
+        <span class="event-date"></span>
+        <h3 class="event-name"></h3>
+      </div>
 
+      <div class="header-bg"></div>
+    </header>
 
+    <div class="body">
+      <div class="event-info"></div>
+      <div class="body-bg"></div>
+    </div>
+
+    <a href="#0" class="close">Close</a>
   </div>
 
   <div class="cover-layer"></div>
-</div> <!-- .cd-schedule -->
+</div>
+<!-- 
+  <div class="event-modal"> -->
+   
+<script type="text/javascript">
+  var division;
+ var standard;
+
+ $("#d1").on('change',function(){
+           division=$("#d1 option:selected").text();
+    });
+    $("#s1").on('change',function(){
+            standard=$("#s1 option:selected").html();
+    });
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+<!-- .cd-schedule -->
 <script src="/assets/modernizr.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script>
