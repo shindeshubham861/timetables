@@ -1,84 +1,4 @@
-<!doctype html>
-<html lang="en" class="no-js">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/reset.css"> <!-- CSS reset -->
-  <link rel="stylesheet" href="/assets/style.css"> <!-- Resource style -->
-  
-  <title>Schedule Template | CodyHouse</title>
-  <style type="text/css">
-    .hi{
-background-color: #11ffee00;  /* Fully transparent */
-
-}
-@media (min-width:961px)  { 
-.cd-schedule .events .events-group {
-    width: 16%;
-    float: left;
-    border: 1px solid #EAEAEA;
-    margin-bottom: 0;
-}
-.cd-schedule .events .events-group > ul {
-    height: auto;
-    display: block;
-    overflow: visible;
-    padding: 23px;
-   
-}
-}
-@media(only screen and (min-width:769px)){
-.cd-schedule .events .events-group {
-    width: 16%;
-    float: left;
-    border: 1px solid #EAEAEA;
-    margin-bottom: 0;
-}
-.cd-schedule .events .events-group > ul {
-    height: auto;
-    display: block;
-    overflow: visible;
-    padding: 23px;
-   
-}
-}
-
-li.single-event{
-
-    top: 199px;
-    height:96px ;
-    
-}
-div.absolute {
-    position: absolute;
-    top: 10px;
-    right: 0;
-    left: 190px;
-    width: 200px;
-    height: 50px;
-    /*border: 3px solid #73AD21;*/
-}
-div.absolte {
-    position: absolute;
-    top: 10px;
-    right: 0;
-    left: 320px;
-    width: 200px;
-    height: 50px;
-    /*border: 3px solid #73AD21;*/
-}
-.cd-schedule .event-date {
-    font-size: 1.4rem;
-    opacity: .7;
-    line-height: 1.2;
-    margin-bottom: .2em;
-    display: none;
-}
-</style>
-</head>
-<body>
 <button onclick="get()">get</button>
 <div class="absolute">
     
@@ -108,8 +28,8 @@ div.absolte {
 </select>
 
 </div>
-<button id="go" onclick="go()">go</button>
-<input type="text" name="Teacher" style="margin-right: 238px;" id="ip1">
+<button id="go" onclick="go()" class="save">go</button>
+<input type="text" name="Teacher"  id="ip1">
 
 
 
@@ -124,7 +44,7 @@ div.absolte {
       <li><span>11:30</span></li>
       <li><span>12:00</span></li>
       <li><span>12:30</span></li>
-      <li><span>13:00</span></li>
+      <li><span>01:00</span></li>
   <!--     <li><span>13:30</span></li>
       <li><span>14:00</span></li>
       <li><span>14:30</span></li>
@@ -146,38 +66,38 @@ div.absolte {
 
         <ul>
          <li class="single-event" data-start="09:00" data-end="10:00"  data-event="event-4">
-            <a href="#0">
+            
               <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
 
                <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
 
-             </a>
+             
           
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-           <a href="#0">
+           
            <em class="event-name"><%=Timetable.find(@mondays.second).teacher%></em> 
 
                <em class="event-name"><%=Timetable.find(@mondays.second).subject%></em>
-               </a>
+               
           </li>
 
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-           <a href="#0">
+           
            
           <em class="event-name"><%=Timetable.find(@mondays.third).teacher%></em> 
 
                <em class="event-name"><%=Timetable.find(@mondays.third).subject%></em>
-               </a>
+               
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-           <a href="#0">
+          
            
              <em class="event-name"><%=Timetable.find(@mondays.fourth).teacher%></em> 
 
                <em class="event-name"><%=Timetable.find(@mondays.fourth).subject%></em>
 
-           </a>
+           
           </li>
          
         </ul>
@@ -436,5 +356,3 @@ alert(ip);
   if( !window.jQuery ) document.write('<script src="/assets/jquery-3.0.0.min.js"><\/script>');
 </script>
 <script src="/assets/main.js"></script> <!-- Resource jQuery -->
-</body>
-</html>

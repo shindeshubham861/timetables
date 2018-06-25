@@ -1,15 +1,304 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Trial</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop For Idea</title>
+  <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
-  <body>
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Lobster|Open+Sans:400,400italic,300italic,300|Raleway:300,400,600' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+
+  
+  <link rel="stylesheet" type="text/css" href="/assets/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/animate.css">
+  <link rel="stylesheet" type="text/css" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/reset.css"> <!-- CSS reset -->
+  <link rel="stylesheet" href="/assets/style.css"> <!-- Resource style -->
+
+  
+  
+
+  
+  
+  <style type="text/css">
+ body { 
+    background-image: url('/assets/classroom.jpg');
+      min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+
+  
+}
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr, #customers td{
+  background-color: #f2f2f2;
+
+}
+
+#customers tr, #customers td:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+ 
+@media (min-width:961px)  { 
+ol, ul {
+    list-style: none;
+    margin-left: 37px;
+}
+
+.cd-schedule .timeline li {
+    position: relative;
+    height: 50px;
+    margin-left: 50px;
+}
+.cd-schedule .events .top-info {
+    display: table;
+    height: 50px;
+    border-bottom: 1px solid #EAEAEA;
+    padding: 0;
+    margin-top: 75px;
+    margin-left: 40px;
+}
+.cd-schedule .timeline li span {
+    display: inline-block;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-top: 75px;
+    margin-right: 50px;
+
+}
+.cd-schedule .events .events-group {
+    width: 16%;
+    float: left;
+    margin-bottom: 0;
+}
+.cd-schedule .events .events-group > ul {
+    height: auto;
+    display: block;
+    overflow: visible;
+    padding: 23px;
+   
+}
+.cd-schedule .events .events-group {
+    border: none;
+  
+}
+.cd-schedule .events .single-event {
+    position: absolute;
+    z-index: 3;
+    width: 156px;
+    left: -1px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    height: auto;
+    max-width: none;
+    margin-right: 0;
+}
+}
+@media(only screen and (min-width:769px)){
+ol, ul {
+    list-style: none;
+    margin-left: 37px;
+}
+.cd-schedule .timeline li {
+    position: relative;
+    height: 50px;
+    margin-left: 50px;
+}
+.cd-schedule .events .top-info {
+    display: table;
+    height: 50px;
+    border-bottom: 1px solid #EAEAEA;
+    padding: 0;
+    margin-top: 60px;
+    margin-left: 40px;
+}
+.cd-schedule .timeline li span {
+    display: inline-block;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-top: 60px;
+    margin-right: 50px;
+
+}
+.cd-schedule .events .events-group {
+    width: 16%;
+    float: left;
+    margin-bottom: 0;
+}
+.cd-schedule .events .events-group > ul {
+    height: auto;
+    display: block;
+    overflow: visible;
+    padding: 23px;
+   
+}
+.cd-schedule .events .events-group {
+    border: none;
+  
+}
+.cd-schedule .events .single-event {
+    position: absolute;
+    z-index: 3;
+    width: 156px;
+    left: -1px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    height: auto;
+    max-width: none;
+    margin-right: 0;
+}
+
+}
+li.single-event{
+
+    top: 199px;
+    height:96px ;
+    padding-top: 10px;
+}
+div.absolute {
+   
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 1px;
+    width: 200px;
+    height: 50px;
+    margin-top: 130px;
+}
+    
+
+div.absolte {
+      position: absolute;
+    top: 10px;
+    right: 0;
+    left: 1px;
+    width: 200px;
+    height: 50px;
+    margin-top: 90px;
+    
+}
+button.save{
+   position: absolute;
+    top: 10px;
+    right: 0;
+    left: 1px;
+    width: 100px;
+    height: 30px;
+    margin-top: 70px;
+    margin-left: 1150px;
+
+
+}
+
+
+
+
+
+
+
+</style>
+
+</head>
+
+<body >
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Timetable</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!-- <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul> -->
+      <ul class="nav navbar-nav navbar-right">
+       <!--  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+         <li class="active"><a href="/subjects">Home</a></li>
+        <li><a href="/teacherdata/index">Teacher</a></li>
+        <li><a href="/offlecture/index">Off</a></li>
+        <li><a href="/timetables">Add</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="content">
+  
+    <div class="container wow fadeInUp delay-03s">
+      <div class="row">
+
+
+
     <%= yield %>
-  </body>
+
+
+      </div>
+    </div>
+</div>
+<script src="/assets/modernizr.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src=" https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script>
+  if( !window.jQuery ) document.write('<script src="/assets/jquery-3.0.0.min.js"><\/script>');
+</script>
+<script src="/assets/main.js"></script>
+  <script src="/assets/jquery.min.js"></script>
+  <script src="/assets/bootstrap.min.js"></script>
+  <script src="/assets/jquery.countdown.min.js"></script>
+  <script src="/assets/wow.js"></script>
+  <script src="/assets/custom.js"></script>
+  <script src="/assets/contactform.js"></script>
+
+</body>
+
 </html>
+

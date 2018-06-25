@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  get 'offlecture/index'
   get 'teacherdata/index'
 	get 'timetable/table'
 
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   resources :timetables
   resources :subjects
   resources :teachers
+  resources :teacherdata
 
   
   

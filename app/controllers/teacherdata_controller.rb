@@ -1,6 +1,9 @@
 class TeacherdataController < ApplicationController
   def index
-  	@standards=Timetable.where(teacher: "akash",day: "monday").ids
+
+  	 @day = params[:day]
+    @teacher = params[:teacher]
+  	@standards=Timetable.where(teacher: @teacher,day: @day).ids
 
   end
 end

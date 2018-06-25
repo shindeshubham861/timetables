@@ -2,51 +2,120 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+
 
 <p id="notice"><%= notice %></p>
 
-<h1>Standards</h1>
+<!-- <h1>Standards</h1> -->
 
-<table id="example" class="display" style="width:100%">
-  <thead>
+<select  id="ds1">
+        <option>Days</option>
+        <option>monday</option>
+        <option>tuesday</option>
+        <option>wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option>saturday</option>
+       
+</select>
+
+<select  id="tg1">
+        <option>teachers</option>
+        <option>Akash</option>
+        <option>hgvgh</option>
+        
+       
+</select>
+
+
+
+  <button class="btn btn-danger" onclick="send()">send</button>
+
+
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<table id="customers">
+
+
+  
     <tr>
-    	<th>Day</th>
+      <th>Day</th>
       <th>lecture</th>
       <th>subject</th>
-      <th>Teacher</th>
-
-      
+      <th>standard</th>
+      <th>division</th>
+      <th>Teacher</th>    
     </tr>
-  </thead>
-
-  <tbody>
     <% @standards.each do |standard| %>
       <tr>
-      <td data-search="<%= Timetable.find(standard).day%>"><%= Timetable.find(standard).day%></td>
+          <td ><%= Timetable.find(standard).day%></td>
 
-        <td ><%= Timetable.find(standard).lecture%></td>
+          <td ><%= Timetable.find(standard).lecture%></td>
 
-        <td><%= Timetable.find(standard).subject%></td>
+          <td><%= Timetable.find(standard).subject%></td>
 
- 		<td><%= Timetable.find(standard).teacher%></td>
+          <td><%= Timetable.find(standard).standard%></td>
 
+          <td><%= Timetable.find(standard).division%></td>
 
-       
+          <td><%= Timetable.find(standard).teacher%></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+  
 
-<br>
+   
+  <% end -%>
+</table>
 <script type="text/javascript">
-	$(document).ready(function() {
-    $('#example').DataTable();
-} );
+  var day;
+ var teacher;
+
+
+ // $("#ds1").on('change',function(){
+ //          day =$("#ds1 option:selected").text();
+ //    });
+ // $("#tg1").on('change',function(){
+ //            b.push($("#ms1 option:selected").text());
+ //    });
+ 
+    
+
+function send(){
+  var a=$("#ds1 option:selected").text();
+  alert(a);
+  var b=$("#tg1 option:selected").text();
+  alert(b);
+
+
+  location.href="/teacherdata?"+"day="+a+"&teacher="+b;
+}
+
+
+</script>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
 </script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script src=" https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<br>
+
+
+
     
    
 
