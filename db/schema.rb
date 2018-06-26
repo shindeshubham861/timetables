@@ -12,10 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2018_06_12_114350) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "divisions", force: :cascade do |t|
     t.string "division"
     t.string "quantiy"
-    t.integer "standard_id"
+    t.bigint "standard_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["standard_id"], name: "index_divisions_on_standard_id"
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 2018_06_12_114350) do
 
   create_table "subjects", force: :cascade do |t|
     t.string "s_name"
-    t.integer "teacher_id"
+    t.bigint "teacher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["teacher_id"], name: "index_subjects_on_teacher_id"
@@ -56,4 +59,6 @@ ActiveRecord::Schema.define(version: 2018_06_12_114350) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "divisions", "standards"
+  add_foreign_key "subjects", "teachers"
 end
