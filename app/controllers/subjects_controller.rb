@@ -7,16 +7,19 @@ class SubjectsController < ApplicationController
     # byebug
     @subjects = Subject.all
     @subject = Subject.new
-    @std = params[:standard]
-    @div = params[:division]
-  @mondays=Timetable.where(day: "monday",standard: @std,division: @div).ids
-  @tuesdays=Timetable.where(day: "tuesday",standard: @std,division: @div).ids
-  @wednesdays=Timetable.where(day: "Wednesday",standard: @std,division: @div).ids
-  @thursdays=Timetable.where(day: "Thursday",standard: @std,division: @div).ids
-  @fridays=Timetable.where(day: "Friday",standard: @std,division: @div).ids
-  @saturdays=Timetable.where(day: "saturday",standard: @std,division: @div).ids
+    @a = params[:standard].nil?
+    if @a==false    
+        @std = params[:standard]
+        @div = params[:division]
+      @mondays=Timetable.where(day: "monday",standard: @std,division: @div).ids
+      @tuesdays=Timetable.where(day: "tuesday",standard: @std,division: @div).ids
+      @wednesdays=Timetable.where(day: "Wednesday",standard: @std,division: @div).ids
+      @thursdays=Timetable.where(day: "Thursday",standard: @std,division: @div).ids
+      @fridays=Timetable.where(day: "Friday",standard: @std,division: @div).ids
+      @saturdays=Timetable.where(day: "saturday",standard: @std,division: @div).ids
+    else
 
-
+    end
   end
 
   # GET /subjects/1
