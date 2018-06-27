@@ -21,13 +21,9 @@
        
 </select>
 
-<select  id="tg1">
-        <option>teachers</option>
-        <option>Akash</option>
-        <option>hgvgh</option>
-        
-       
-</select>
+  <%= form_with(model: Teacher, local: true) do |form| %>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:prompt => ' Select Teacher'}, {:id => "tg1"})%>
+        <% end %>
 
 
 

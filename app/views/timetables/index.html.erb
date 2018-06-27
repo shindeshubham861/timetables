@@ -47,6 +47,7 @@
     </ul>
   </div> <!-- .timeline -->
 <!-- <h1><p>Click on this paragraph.</p></h1> -->
+   
   <div class="events">
     <ul>
       <li class="events-group">
@@ -194,7 +195,7 @@
          <%=form.collection_select(:model, Subject.all, :id,:s_name,{:prompt => 'select subject'}, {:id => "ths4"}) %>
         <% end %><br>
          <%= form_with(model: Teacher, local: true) do |form| %>
-         <%=form.collection_select(:model, Teacher.all, :id, :name,{:prompt => ' Select Teacher'}, {:id => "tht4"})%>
+       <%=form.collection_select(:model, Teacher.all, :id, :name,{:prompt => ' Select Teacher'}, {:id => "tht4"})%>
         <% end %></li>
         </center>
        
@@ -281,7 +282,7 @@
   ========================================================= -->
        
 
-  </div>
+
   <button onclick="save()" class="save">save</button>
  <script type="text/javascript">
 //  var teacher = [];
