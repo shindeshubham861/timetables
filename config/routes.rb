@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-
+ root to: "timetables#index"
   get 'offlecture/index'
   get 'teacherdata/index'
 	get 'timetable/table'
