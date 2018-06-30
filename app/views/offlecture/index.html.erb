@@ -38,7 +38,7 @@
         <option>Days</option>
         <option>monday</option>
         <option>tuesday</option>
-        <option>wednesday</option>
+        <option>Wednesday</option>
         <option>Thursday</option>
         <option>Friday</option>
         <option>saturday</option>
@@ -56,7 +56,7 @@
 
 
 
-
+<%if @ad==false && @at==false%>
 <table id="example">
         <thead>
             <tr>
@@ -67,23 +67,47 @@
                
             </tr>
         </thead>
-        <% if @day==false %>
+        
         <tbody>
 
-           
+           <% if @lecture1==true %>
             <tr>
-                <td></td>
-                <td><%=@lecture1%></td>
+                <td><%=@teacher%></td>
+                <td>Lecture 1</td>
                 <td><button class="btn-danger">OFF</button></td>
-                <td><%=@lecture1%></td>
+                <td><%=@day%></td>
             </tr>
-        
-          
+
+            <% end -%>
+            <%  if @lecture2==true %>
+                <tr>
+                <td><%=@teacher%></td>
+                <td>Lecture 2</td>
+                <td><button class="btn-danger">OFF</button></td>
+                <td><%=@day%></td>
+            </tr>
+            <% end -%>
+             <%  if @lecture3==true %>
+                <tr>
+                <td><%=@teacher%></td>
+                <td>Lecture 3</td>
+                <td><button class="btn-danger">OFF</button></td>
+                <td><%=@day%></td>
+            </tr>
+            <% end -%>
+             <%  if @lecture4==true %>
+              <tr>
+                <td><%=@teacher%></td>
+                <td>Lecture 4</td>
+                <td><button class="btn-danger">OFF</button></td>
+                <td><%=@day%></td>
+            </tr>
+            <% end -%>
          
                
     
  </tbody>
- <% end -%>
+ 
         <tfoot>
             <tr>
                 <th>Teacher name</th>
@@ -94,7 +118,7 @@
         </tfoot>
     </table>
 
-
+<% end -%>
 <script type="text/javascript">
 	$(document).ready(function() {
     $('#example').DataTable();
