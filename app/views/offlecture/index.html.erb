@@ -34,60 +34,62 @@
 </style>
 
 
+<select  id="dy1">
+        <option>Days</option>
+        <option>monday</option>
+        <option>tuesday</option>
+        <option>wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option>saturday</option>
+       
+</select>
+
+  <%= form_with(model: Teacher, local: true) do |form| %>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:prompt => ' Select Teacher'}, {:id => "tr1"})%>
+        <% end %>
+
+
+
+  <button class="btn btn-danger" onclick="send()">Click</button>
+
+
+
+
+
 <table id="example">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Teacher name</th>
+                <th>Lecture</th>
+                <th>Status</th>
+                <th>Day</th>
+               
             </tr>
         </thead>
+        <% if @day==false %>
         <tbody>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-            </tr>
-            <tr>
-                <td>Garrett Winters</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011/07/25</td>
-                <td>$170,750</td>
-            </tr>
-            <tr>
-                <td>Ashton Cox</td>
-                <td>Junior Technical Author</td>
-                <td>San Francisco</td>
-                <td>66</td>
-                <td>2009/01/12</td>
-                <td>$86,000</td>
-            </tr>
-            <tr>
-                <td>Cedric Kelly</td>
-                <td>Senior Javascript Developer</td>
-                <td>Edinburgh</td>
-                <td>22</td>
-                <td>2012/03/29</td>
-                <td>$433,060</td>
-            </tr>
 
+           
+            <tr>
+                <td></td>
+                <td><%=@lecture1%></td>
+                <td><button class="btn-danger">OFF</button></td>
+                <td><%=@lecture1%></td>
+            </tr>
+        
+          
+         
+               
+    
  </tbody>
+ <% end -%>
         <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Teacher name</th>
+                <th>Lecture</th>
+                <th>Status</th>
+                <th>Day</th>
             </tr>
         </tfoot>
     </table>
@@ -97,4 +99,19 @@
 	$(document).ready(function() {
     $('#example').DataTable();
 } );
+</script>
+
+<script type="text/javascript">
+
+function send(){
+  var a=$("#dy1 option:selected").text();
+  alert(a);
+  var b=$("#tr1 option:selected").text();
+  alert(b);
+
+
+  location.href="/offlecture?"+"day="+a+"&teacher="+b;
+}
+
+
 </script>

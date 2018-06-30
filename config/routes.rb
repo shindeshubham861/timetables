@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :subjects
   resources :teachers
   resources :teacherdata
+  resources :offlecture
 
   
   
