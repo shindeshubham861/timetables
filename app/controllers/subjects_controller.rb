@@ -1,6 +1,8 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
 
+ 
+
   # GET /subjects
   # GET /subjects.json
   def index
@@ -11,12 +13,12 @@ class SubjectsController < ApplicationController
     if @a==false    
         @std = params[:standard]
         @div = params[:division]
-      @mondays=Timetable.where(day: "monday",standard: @std,division: @div).ids
-      @tuesdays=Timetable.where(day: "tuesday",standard: @std,division: @div).ids
-      @wednesdays=Timetable.where(day: "Wednesday",standard: @std,division: @div).ids
-      @thursdays=Timetable.where(day: "Thursday",standard: @std,division: @div).ids
-      @fridays=Timetable.where(day: "Friday",standard: @std,division: @div).ids
-      @saturdays=Timetable.where(day: "saturday",standard: @std,division: @div).ids
+      @mondays=Timetable.where(day: "monday",standard: @std,division: @div).order('id ASC').ids
+      @tuesdays=Timetable.where(day: "tuesday",standard: @std,division: @div).order('id ASC').ids
+      @wednesdays=Timetable.where(day: "Wednesday",standard: @std,division: @div).order('id ASC').ids
+      @thursdays=Timetable.where(day: "Thursday",standard: @std,division: @div).order('id ASC').ids
+      @fridays=Timetable.where(day: "Friday",standard: @std,division: @div).order('id ASC').ids
+      @saturdays=Timetable.where(day: "saturday",standard: @std,division: @div).order('id ASC').ids
     else
 
     end
@@ -32,8 +34,11 @@ class SubjectsController < ApplicationController
     @subject = Subject.new
   end
 
+ 
+
   # GET /subjects/1/edit
   def edit
+  
   end
 
   # POST /subjects

@@ -1,5 +1,11 @@
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.css">
+
 <div class="absolute">
     
 <select  id="dd1">
@@ -29,9 +35,105 @@
 
 </div>
 <button id="go" onclick="go()" class="save">go</button>
+<input type="text" name="tag" class="invisible" id="akash" >
+
+  
+
 
 
 <% if @a==false %>
+
+<style>
+.form-get{
+  padding-top: 28px;
+   width: 50px; 
+   margin-left: 20px;
+
+}
+.invisible {
+  visibility: hidden;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    /*z-index: 1;*/ /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 200%; /* Full width */
+    height: 200%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+   /* background-color: rgb(0,0,0);  Fallback color 
+    background-color: rgba(0,0,0,0.4);*/ /* Black w/ opacity */
+}
+.modal-dialog {
+    width: 300px;
+   margin-right: 1650px;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+
+margin: auto;
+
+padding: 20px;
+
+border: 1px solid #888;
+
+width: 80%;
+
+height: 250px;
+}
+
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header {
+    padding: 2px 16px;
+    
+    color: white;
+    padding: 2px 16px;
+
+background-color: rebeccapurple;
+
+color: white;
+
+height: 35px;
+
+padding-top: 5px;
+}
+
+.modal-body {
+    padding-top: 28px;
+    padding-left: 35px;
+    height: 130px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Add Animation */
+
+</style>
   
 
 
@@ -68,38 +170,49 @@
 
         <ul>
          <li class="single-event" data-start="09:00" data-end="10:00"  data-event="event-4">
-            
+         <button type="button" class="icn" onclick="test(<%=@mondays.first%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@mondays.first).lecture%></em>
               <em class="event-name"><%=Timetable.find(@mondays.first).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
-
-             
-          
+              <em class="event-name"><%=Timetable.find(@mondays.first).subject%></em>
+               
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-           
-           <em class="event-name"><%=Timetable.find(@mondays.second).teacher%></em> 
+            <button type="button" class="icn" onclick="test(<%=@mondays.second%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
 
-               <em class="event-name"><%=Timetable.find(@mondays.second).subject%></em>
-               
+              <em class="event-name">Lecture <%=Timetable.find(@mondays.second).lecture%></em>
+              <em class="event-name"><%=Timetable.find(@mondays.second).teacher%></em> 
+
+              <em class="event-name"><%=Timetable.find(@mondays.second).subject%></em>
+
           </li>
 
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-           
-           
-          <em class="event-name"><%=Timetable.find(@mondays.third).teacher%></em> 
+            <button type="button" class="icn" onclick="test(<%=@mondays.third%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@mondays.third).lecture%></em>
 
-               <em class="event-name"><%=Timetable.find(@mondays.third).subject%></em>
-               
+              <em class="event-name"><%=Timetable.find(@mondays.third).teacher%></em> 
+
+              <em class="event-name"><%=Timetable.find(@mondays.third).subject%></em>
+
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-          
-           
-             <em class="event-name"><%=Timetable.find(@mondays.fourth).teacher%></em> 
+           <button type="button" class="icn" onclick="test(<%=@mondays.fourth%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@mondays.fourth).lecture%></em>
 
-               <em class="event-name"><%=Timetable.find(@mondays.fourth).subject%></em>
+              <em class="event-name"><%=Timetable.find(@mondays.fourth).teacher%></em> 
 
-           
+              <em class="event-name"><%=Timetable.find(@mondays.fourth).subject%></em>
+
+
           </li>
          
         </ul>
@@ -110,32 +223,44 @@
 
         <ul>
          <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
-            
-           <em class="event-name"><%=Timetable.find(@tuesdays.first).teacher%></em> 
+            <button type="button" class="icn" onclick="test(<%=@tuesdays.first%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@tuesdays.first).lecture%></em> 
+              <em class="event-name"><%=Timetable.find(@tuesdays.first).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@tuesdays.first).subject%></em>
-            
+              <em class="event-name"><%=Timetable.find(@tuesdays.first).subject%></em>
+
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@tuesdays.second%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@tuesdays.second).lecture%></em>
               <em class="event-name"><%=Timetable.find(@tuesdays.second).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@tuesdays.second).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@tuesdays.second).subject%></em>
+
           </li>
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@tuesdays.third%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@tuesdays.third).lecture%></em>
               <em class="event-name"><%=Timetable.find(@tuesdays.third).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@tuesdays.third).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@tuesdays.third).subject%></em>
+
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@tuesdays.fourth%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@tuesdays.fourth).lecture%></em>
               <em class="event-name"><%=Timetable.find(@tuesdays.fourth).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@tuesdays.fourth).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@tuesdays.fourth).subject%></em>
+
           </li>
         </ul>
       </li>
@@ -145,32 +270,44 @@
 
         <ul>
         <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+           <button type="button" class="icn" onclick="test(<%=@wednesdays.first%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@wednesdays.first).lecture%></em> 
               <em class="event-name"><%=Timetable.find(@wednesdays.first).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@wednesdays.first).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@wednesdays.first).subject%></em>
+
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@wednesdays.second%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@wednesdays.second).lecture%></em>
               <em class="event-name"><%=Timetable.find(@wednesdays.second).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@wednesdays.second).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@wednesdays.second).subject%></em>
+
           </li>
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@wednesdays.third%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@wednesdays.third).lecture%></em>
               <em class="event-name"><%=Timetable.find(@wednesdays.third).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@wednesdays.third).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@wednesdays.third).subject%></em>
+
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@wednesdays.fourth%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@wednesdays.fourth).lecture%></em>
               <em class="event-name"><%=Timetable.find(@wednesdays.fourth).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@wednesdays.fourth).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@wednesdays.fourth).subject%></em>
+
           </li>
 
 
@@ -182,32 +319,44 @@
 
         <ul>
          <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
-           
-             <em class="event-name"><%=Timetable.find(@thursdays.first).teacher%></em> 
+            <button type="button" class="icn" onclick="test(<%=@thursdays.first%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@thursdays.first).lecture%></em>
+              <em class="event-name"><%=Timetable.find(@thursdays.first).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@thursdays.first).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@thursdays.first).subject%></em>
+
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@thursdays.second%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@thursdays.second).lecture%></em>
               <em class="event-name"><%=Timetable.find(@thursdays.second).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@thursdays.second).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@thursdays.second).subject%></em>
+
           </li>
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@thursdays.third%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@thursdays.third).lecture%></em>
               <em class="event-name"><%=Timetable.find(@thursdays.third).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@thursdays.third).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@thursdays.third).subject%></em>
+
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@thursdays.fourth%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@thursdays.fourth).lecture%></em>
               <em class="event-name"><%=Timetable.find(@thursdays.fourth).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@thursdays.fourth).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@thursdays.fourth).subject%></em>
+
           </li>
 
         </ul>
@@ -218,32 +367,44 @@
 
         <ul>
          <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@fridays.first%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@fridays.first).lecture%></em>
               <em class="event-name"><%=Timetable.find(@fridays.first).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@fridays.first).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@fridays.first).subject%></em>
+
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@fridays.second%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@fridays.second).lecture%></em>
               <em class="event-name"><%=Timetable.find(@fridays.second).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@fridays.second).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@fridays.second).subject%></em>
+
           </li>
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@fridays.third%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@fridays.third).lecture%></em>
               <em class="event-name"><%=Timetable.find(@fridays.third).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@fridays.third).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@fridays.third).subject%></em>
+
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@fridays.fourth%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@fridays.fourth).lecture%></em>
               <em class="event-name"><%=Timetable.find(@fridays.fourth).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@fridays.fourth).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@fridays.fourth).subject%></em>
+
           </li>
 
         </ul>
@@ -254,33 +415,45 @@
 
         <ul>
          <li class="single-event" data-start="09:00" data-end="10:00" data-content="event-restorative-yoga" data-event="event-4">
-           
-             <em class="event-name"><%=Timetable.find(@saturdays.first).teacher%></em> 
+            <button type="button" class="icn" onclick="test(<%=@saturdays.first%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@saturdays.first).lecture%></em>
+              <em class="event-name"><%=Timetable.find(@saturdays.first).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@saturdays.first).subject%></em>
-              
+              <em class="event-name"><%=Timetable.find(@saturdays.first).subject%></em>
+
            
           </li>
            <li class="single-event" data-start="10:00" data-end="11:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@saturdays.second%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@saturdays.second).lecture%></em>
               <em class="event-name"><%=Timetable.find(@saturdays.second).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@saturdays.second).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@saturdays.second).subject%></em>
+
           </li>
            <li class="single-event" data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@saturdays.third%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@saturdays.third).lecture%></em>
               <em class="event-name"><%=Timetable.find(@saturdays.third).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@saturdays.third).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@saturdays.third).subject%></em>
+
           </li>
            <li class="single-event" data-start="12:00" data-end="13:00" data-content="event-restorative-yoga" data-event="event-4">
-           
+            <button type="button" class="icn" onclick="test(<%=@saturdays.fourth%>)" >
+          <span class="glyphicon glyphicon-edit"></span> 
+        </button>
+              <em class="event-name">Lecture <%=Timetable.find(@saturdays.fourth).lecture%></em>
               <em class="event-name"><%=Timetable.find(@saturdays.fourth).teacher%></em> 
 
-               <em class="event-name"><%=Timetable.find(@saturdays.fourth).subject%></em>
-           
+              <em class="event-name"><%=Timetable.find(@saturdays.fourth).subject%></em>
+
           </li>
         </ul>
       </li>
@@ -288,26 +461,39 @@
   </div>
 <%end%>
 
-  <div class="event-modal">
-    <header class="header">
-      <div class="content">
-        <span class="event-date"></span>
-        <h3 class="event-name"></h3>
+
+ <div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Edit <button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+       
       </div>
 
-      <div class="header-bg"></div>
-    </header>
+      <!-- Modal body -->
+      <div class="modal-body">
+         <%= form_with(model: Subject, local: true) do |form| %>
+         <%=form.collection_select(:model, Subject.all, :id,:s_name,{:prompt => 'Select Subject'},{:id => "sb1"}) %>
+        <% end %>    <br>
+         <%= form_with(model: Teacher, local: true) do |form| %>
+         <%=form.collection_select(:model, Teacher.all, :id, :name,{:prompt => ' Select Teacher'}, {:id => "th1"})%>
+        <% end %> 
+      </div>
 
-    <div class="body">
-      <div class="event-info"></div>
-      <div class="body-bg"></div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" id="set" class="btn btn-danger" data-dismiss="modal" style="padding-left: 9px;margin-right: 30px; width: 60px;">Cancel</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="use()">Save</button>
+      </div>
+
+
     </div>
-
-    <a href="#0" class="close">Close</a>
   </div>
-
-  <div class="cover-layer"></div>
 </div>
+ 
+ 
 
 <!-- 
   <div class="event-modal"> -->
@@ -315,40 +501,107 @@
 <script type="text/javascript">
   var division;
  var standard;
+var adarsh;
 
- $("#d1").on('change',function(){
-           division=$("#d1 option:selected").text();
-    });
-    $("#s1").on('change',function(){
-            standard=$("#s1 option:selected").html();
-    });
+ var teacher;
+ var subject;
 
+$("#th1").on('change',function(){
+           teacher=$("#th1 option:selected").text();
+    });
+    $("#sb1").on('change',function(){
+            subject=$("#sb1 option:selected").html();
+    });
+ 
+
+
+ //function go used for sending params at starting
 
 function go(){
   var b=$("#dd1 option:selected").text();
   var a=$("#ss1 option:selected").text();
 
   location.href="/subjects?"+"standard="+a+"&division="+b;
+
+  // var data2 = 
+  // {
+  //   "standard":a,
+  //   "division":b,
+  // }
+  // $.ajax({
+  //       url : "/go",
+  //       type : "post",
+  //       data : { data2_value: data2 }
+  //   });
+
+
 }
 
+//function use used while saving popup
+function use(){
+var a = location.href.split("?")[1].split("&")[0];
+var b = location.href.split("?")[1].split("&")[1];
 
+  // var set= $("#myBtn").val();
+  //  var e = set.split("+")[0];
+  //  var f = set.split("+")[1];
+var rushi= document.getElementById("akash").value;
 
+var data  =  
+{
+     "id"    : rushi,
+    "teacher": teacher,
+    "subject": subject,
+    "standard": a.split("=")[1],
+    "division": b.split("=")[1]
+
+};
+// alert(JSON.stringify(data));
+$.ajax({
+        url : "/subject",
+        type : "post",
+        data : { data_value: data }
+    });
+
+location.href="";
+location.href="";
+
+location.reload(); 
+
+}
 
 function get(){
 var ip= $("#ip1").val();
-  
-  
+// alert(ip);
+}
 
-alert(ip);
+//function test used when popup 
+function test(k){
+var adarsh = k;
+// alert(adarsh);
+document.getElementById("akash").value=adarsh;
+
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+    modal.style.display = "block";
 }
 
 
+var modal = document.getElementById('myModal');
 
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+    modal.style.display = "none";
+}
 
-
-
-
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 </script>
+
 
 
 

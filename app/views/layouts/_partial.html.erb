@@ -21,18 +21,7 @@
   <link rel="stylesheet" type="text/css" href="/assets/animate.css">
   <link rel="stylesheet" type="text/css" href="/assets/style.css">
     <link rel="stylesheet" href="/assets/reset.css"> <!-- CSS reset -->
-  <link rel="stylesheet" href="/assets/style.css"> 
-  <!-- Resource style -->
-   <link href="/assets/bootstrap.min2.css" rel="stylesheet" type="text/css">
-  <link href="/assets/pixeladmin.min.css" rel="stylesheet" type="text/css">
-  <link href="/assets/widgets.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Theme -->
-  <link href="/assets/clean.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Pace.js -->
-  <script src="/assets/pace.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+  <link rel="stylesheet" href="/assets/style.css"> <!-- Resource style -->
 
   
   
@@ -56,7 +45,6 @@
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    margin-top: 50px;
 }
 
 #customers td, #customers th {
@@ -231,7 +219,6 @@ button.save{
     background: #707eaf;
 }
 
-
 }
 @media(only screen and (min-width:769px)){
   .icn{
@@ -358,9 +345,10 @@ button.save{
     top: 10px;
     right: 0;
     left: 1px;
-    width: 80px;
+    width: 100px;
     height: 30px;
-   margin-top: 170px;
+    margin-top: 70px;
+    margin-left: 1150px;
 
 
 }
@@ -382,176 +370,41 @@ button.save{
 </head>
 
 <body >
-
-    <script language="Javascript" type="text/javascript">
-         
-        function datatables() {
-            window.location.replace("datatables");
-        }
-
-        function forms() {
-            window.location.replace("forms");
-        }
-    </script>
-  <!-- Nav -->
-
-  <nav class="px-nav px-nav-left" style="background-color:  #132a42">
-    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
-      <span class="px-nav-toggle-arrow"></span>
-      <span class="navbar-toggle-icon"></span>
-      <span class="px-nav-toggle-label font-size-11">HIDE MENU</span>
-    </button>
-
-    <ul class="px-nav-content">
-
-
-         <li class="px-nav-box p-a-3 b-b-1" id="demo-px-nav-box">
-          <style type="text/css">
-          .px-nav-box {
-    border-color: #dbe0e200;
-    color: #2c333e;
-}</style>
-        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <img src="/assets/shopidea.png" alt="" class="pull-xs-left m-r-2 border-round" style="width: 54px; height: 54px;">
-        <div class="font-size-16"><span class="font-weight-light" style="color: white;">Welcome </span><strong></strong></div>
-        <div class="font-size-11"><span class="font-weight-light" style="color: white;">Company Name </span><strong></strong></div>
-        
-      </li>
-
-      <li class="px-nav-item px-nav-dropdown" style="color:white;" style="background-color:  #132a42;">
-        <style type="text/css">
-        .px-nav-content>.px-nav-item>.px-nav-dropdown-menu, .px-nav-content>.px-nav-item>a, .px-nav-dropdown-menu-title 
-        {
-    border-bottom: 1px solid #dfe4e600;
-}
-
-.px-nav, .px-nav-item a {
-    color: #ffffff;
-}
-.px-nav-dropdown-menu {
-    background: #144653;
-}
-.px-nav-dropdown-menu .px-nav-dropdown-menu .px-nav-item>a, .px-nav-dropdown-menu .px-nav-item+.px-nav-item>a {
-    border-top: 1px solid #e2dbe117;
-}
-.px-nav-item a:active, .px-nav-item a:focus, .px-nav-item a:hover {
-    color:  #a2f0d0;
-    background: 0 0;
-}
-.px-nav-collapse {
-    
-    min-height: 142.7%;
-}
-.px-nav {
-    position: absolute;
-    height: auto;
-    min-height: 142.7%;
-}
-
-      </style>
-    
-
-        
-
-        <a href="#"><i class="px-nav-icon fa fa-home" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Dashboard</span></a>
-
-
-      <!--   <ul class="px-nav-dropdown-menu" style="color:white;"  style="background-color:  #132a42;">
-          
-
-                    <li class="px-nav-item"><a href="/"><span class="px-nav-label" > &nbsp  &nbsp  &nbsp Progress report</span></a></li>
-          <li class="px-nav-item"><a href="/"><span class="px-nav-label"> &nbsp  &nbsp  &nbsp Analysis</span></a></li>
-          
-        </ul> -->
-      </li>
-      <!-- <li class="px-nav-item">
-        <a href="javascript:forms()"><i class="px-nav-icon fa fa-edit" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Registration</span></a>
-          
-
-                   
-      </li> -->
-       <li class="px-nav-item px-nav-dropdown">
-        <a href="#"><i class="px-nav-icon fa fa-certificate" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Timetable</span></a>
-
-       <ul class="px-nav-dropdown-menu">
-          <li class="px-nav-item"><a href="/subjects"><a href="/parts"><span class="px-nav-label">&nbsp &nbsp &nbsp View Timetable</span></a></li>
-          <li class="px-nav-item"><a href="/timetables"><span class="px-nav-label">&nbsp &nbsp &nbsp Add Timetable</span></a></li>
-         <!--  <li class="px-nav-item"><a href="/accessories"><span class="px-nav-label">&nbsp &nbsp &nbsp Accessories</span></a></li>
- -->
-       
-        </ul>
-      </li>
-      <li class="px-nav-item px-nav-dropdown">
-        <a href="#"><i class="px-nav-icon fa fa-cubes" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Teachers</span></a>
-        <ul class="px-nav-dropdown-menu" style="color:white;"  style="background-color:  #132a42;">
-          
-
-                    <li class="px-nav-item"><a href="/teacherdata/index"><span class="px-nav-label" >&nbsp &nbsp &nbsp Daily Lectures</span></a></li>
-       
-          <li class="px-nav-item"><a href="/offlecture/index"><span class="px-nav-label">&nbsp &nbsp &nbsp Off Lectures</span></a></li>
-          
-        </ul>
-      </li>
-  
-    </ul> 
-  </nav>
-</div>
-
-  <!-- Navbar -->
-  <nav class="navbar px-navbar" style="background-color: #132a42 ">
-   
-    <div class="navbar-header" ;">
-      <a class="navbar-brand" href="#">Shopforidea</a>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Timetable</a>
     </div>
-
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-navbar-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
-
-    <div class="collapse navbar-collapse" id="px-navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="#"></a></a>
-      </ul>
-
-     
-     <div class="nav navbar-right"><span>
-
-    <div class="btn-group" style="margin-top: 4px;">
-          <a href="#" class="btn btn-xs btn-primary btn- " ><i class="fa fa-envelope" style="color: white;"></i></a>
-          <a href="#"class="btn btn-xs btn-primary btn-" ><i class="fa fa-user" style="color: white;"></i></a>
-          <a href="#"class="btn btn-xs btn-primary btn-" ><i class="fa fa-cog" style="color: white;"></i></a>
-          <a href="#"class="btn btn-xs btn-primary btn-" ><i class="fa fa-power-off" style="color: white;"></i></a>
-        </div> 
-</span >
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <ul class="nav navbar-nav navbar-right">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <!-- <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            User
-          </a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
           <ul class="dropdown-menu">
-             <li><a href="pages-profile-v2.html"><span class="label label-warning pull-xs-right"><i class="fa fa-asterisk"></i></span>Profile</a></li>
-            <li><a href="pages-account.html">Account</a></li>
-            <li><a href="pages-messages-list.html"><i class="dropdown-icon fa fa-envelope"></i>&nbsp;&nbsp;Messages</a></li>
-            <li class="divider"></li>
-            <li><a href="/users/sign_out"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
+            <li><a href="#">Page 1-1</a></li>
+            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">Page 1-3</a></li>
           </ul>
         </li>
+        <li><a href="#">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+      </ul> -->
+      <ul class="nav navbar-nav navbar-right">
+       <!--  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+         <li class="active"><a href="/subjects">Home</a></li>
+        <li><a href="/teacherdata/index">Teacher</a></li>
+        <li><a href="/offlecture/index">Off</a></li>
+        <li><a href="/timetables">Add</a></li>
       </ul>
     </div>
-  </nav>
-
+  </div>
+</nav>
   <div class="content">
   
     <div class="container wow fadeInUp delay-03s">
@@ -1422,11 +1275,6 @@ this.activeTarget=b,this.clear();var c=this.selector+'[data-target="'+b+'"],'+th
 <script>
   if( !window.jQuery ) document.write('<script src="/assets/jquery-3.0.0.min.js"><\/script>');
 </script>
- <script src="/assets/bootstrap.min.js"></script>
-  <script src="/assets/pixeladmin.min.js"></script>
-
-  <!-- Your scripts -->
-  <script src="/assets/app.js"></script>
 <!-- <script src="/assets/main.js"></script>
   <script src="/assets/jquery.min.js"></script>
   <script src="/assets/bootstrap.min.js"></script>

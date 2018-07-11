@@ -7,9 +7,18 @@
 
 
 <p id="notice"><%= notice %></p>
+<style type="text/css">
+  .btn-danger {
+    top: 10px;
+    color: #fff;
+    border-color: #ca5e51;
+    background: #e46050;
+    margin-top: 170px;
+}
+</style>
 
 <!-- <h1>Standards</h1> -->
-
+<div  class="absolute">
 <select  id="ds1">
         <option>Days</option>
         <option>monday</option>
@@ -20,11 +29,12 @@
         <option>saturday</option>
        
 </select>
-
+</div>
+<div  class="absolte">
   <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name,{:prompt => ' Select Teacher'}, {:id => "tg1"})%>
         <% end %>
-
+</div>
 
 
   <button class="btn btn-danger" onclick="send()">send</button>
@@ -32,7 +42,7 @@
 
 
 
-<table id="customers">
+<table id="customers" style="margin-top: 50px;">
 
 
   
@@ -75,25 +85,7 @@ function send(){
 
 
   location.href="/teacherdata?"+"day="+a+"&teacher="+b;
-
-
-
-   <% if  @std==true %>
-
-
- function(JSalert(){
-             
-              swal(" <%= @teacher%> Doesn't Have Any Lecture On <%= @day%>");                                  }   
-                };
-
- <% end -%>
-
-
-
 }
-
-   
-
 </script>
 
 
