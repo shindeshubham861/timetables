@@ -1,11 +1,11 @@
-<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
 <link rel="stylesheet" type="text/css" href="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.css">
-
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <div class="absolute">
     
 <select  id="dd1">
@@ -37,7 +37,6 @@
 <button id="go" onclick="go()" class="save">go</button>
 <input type="text" name="tag" class="invisible" id="akash" >
 
-  
 
 
 
@@ -468,7 +467,7 @@ padding-top: 5px;
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Edit <button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+        <h4 class="modal-title">Edit <button type="button" class="close" data-dismiss="modal" id="closemodal">&times;</button></h4>
        
       </div>
 
@@ -484,8 +483,8 @@ padding-top: 5px;
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" id="set" class="btn btn-danger" data-dismiss="modal" style="padding-left: 9px;margin-right: 30px; width: 60px;">Cancel</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="use()">Save</button>
+        
+        <button type="button" class="btn-sert" data-dismiss="modal" onclick="use()">Save</button>
       </div>
 
 
@@ -513,7 +512,10 @@ $("#th1").on('change',function(){
             subject=$("#sb1 option:selected").html();
     });
  
-
+//function for close btn in popup
+$('#closemodal').click(function() {
+    $('#myModal').modal('hide');
+});
 
  //function go used for sending params at starting
 

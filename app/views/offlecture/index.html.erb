@@ -2,6 +2,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 <script type="text/javascript" src="js/script.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 
 <p id="notice"><%= notice %></p>
@@ -42,11 +43,16 @@
     background: #e46050;
     margin-top: 170px;
 }
+.btn-get{
+        color: #fff;
+    border-color: #ca5e51;
+    background: #e46050;
+}
 
 
 </style>
 
-<div class="absolute">
+<div class="absolu">
 <select  id="dy1">
         <option>Days</option>
         <option>monday</option>
@@ -58,7 +64,7 @@
        
 </select>
 </div>
-<div class="absolte">
+<div class="absol">
   <%= form_with(model: Teacher, local: true) do |form| %>
          <%=form.collection_select(:model, Teacher.all, :id, :name,{:prompt => ' Select Teacher'}, {:id => "tr1"})%>
         <% end %>
@@ -88,7 +94,7 @@
             <tr>
                 <td><%=@teacher%></td>
                 <td>Lecture 1</td>
-                <td><button class="btn-danger">OFF</button></td>
+                <td><button class="btn-get">OFF</button></td>
                 <td><%=@day%></td>
             </tr>
         
@@ -97,7 +103,7 @@
                 <tr>
                 <td><%=@teacher%></td>
                 <td>Lecture 2</td>
-                <td><button class="btn-danger">OFF</button></td>
+                <td><button class="btn-get">OFF</button></td>
                 <td><%=@day%></td>
             </tr>
             <% end -%>
@@ -105,7 +111,7 @@
                 <tr>
                 <td><%=@teacher%></td>
                 <td>Lecture 3</td>
-                <td><button class="btn-danger">OFF</button></td>
+                <td><button class="btn-get">OFF</button></td>
                 <td><%=@day%></td>
             </tr>
             <% end -%>
@@ -113,7 +119,7 @@
               <tr>
                 <td><%=@teacher%></td>
                 <td>Lecture 4</td>
-                <td><button class="btn-danger">OFF</button></td>
+                <td><button class="btn-get">OFF</button></td>
                 <td><%=@day%></td>
             </tr>
             <% end -%>
