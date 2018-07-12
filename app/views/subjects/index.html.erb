@@ -1,10 +1,10 @@
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     <script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
-  <link rel="stylesheet" type="text/css" href="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
+<link rel="stylesheet" type="text/css" href="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.css">
 
 <div class="absolute">
     
@@ -562,11 +562,9 @@ $.ajax({
         type : "post",
         data : { data_value: data }
     });
-
-location.href="";
-location.href="";
-
-location.reload(); 
+ modal.style.display = "none";
+  while (new Date() < 3* 1000) {}
+    location.reload();
 
 }
 
