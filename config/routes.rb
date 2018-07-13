@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'offlecture/index'
   get 'teacherdata/index'
 	get 'timetable/table'
+  get 'subjects/dashboard'
 
   resources :divisions
   resources :standards
