@@ -15,5 +15,10 @@ class ApiController < ApplicationController
 		render :json => Teacher.all.as_json(:only => [:id, :name, :qualification, :address, :mobile, :email])
 		
 	end
+	
+	def testtwo
+		render :json => Teacher.all.as_json(:only => [:id, :name, :qualification, :address, :mobile, :email])
+		
+	end
 end
 

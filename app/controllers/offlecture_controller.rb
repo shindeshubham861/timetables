@@ -14,6 +14,11 @@ class OfflectureController < ApplicationController
 	@lecture4=Timetable.where(day:  @day,lecture: "4",teacher: @teacher).ids.to_s.split("[")[1].split("]")[0].nil?
 	else
 		end
+    def testfour
+		render :json => @lecture1.all.as_json(:only => [:id, :name, :qualification, :address, :mobile, :email])
+		
+	end
+ 
 	# 	@lecture1=Timetable.where(day: @day,lecture: "1").where.not(teacher: @teacher).ids.to_s.split("[")[1].split("]")[0].nil?
 	# @lecture2=Timetable.where(day: @day,lecture: "2").where.not(teacher: @teacher).ids.to_s.split("[")[1].split("]")[0].nil?
 	# @lecture3=Timetable.where(day: @day,lecture: "3").where.not(teacher: @teacher).ids.to_s.split("[")[1].split("]")[0].nil?

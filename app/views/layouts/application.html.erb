@@ -36,7 +36,7 @@
   
   <style type="text/css">
  body { 
-    background-image: url('/assets/board5.png');
+    background-image: url('/assets/board2.jpg');
       min-height: 500px;
     background-attachment: fixed;
     background-position: center;
@@ -215,6 +215,27 @@ div.absolte {
     height: 50px;
     margin-top: 90px;
     
+}
+div.absolu {
+   
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 1px;
+    width: 200px;
+    height: 50px;
+    margin-top: 130px;
+}
+    
+
+div.absol {
+       position: absolute;
+    top: 10px;
+    right: 0;
+    left: 1px;
+    width: 200px;
+    height: 50px;
+    margin-top: 90px;
 }
 
 button.save{
@@ -533,6 +554,39 @@ margin-left: 24px;
 }
 
 </style>
+       <style type="text/css">
+        .px-nav-content>.px-nav-item>.px-nav-dropdown-menu, .px-nav-content>.px-nav-item>a, .px-nav-dropdown-menu-title 
+        {
+    border-bottom: 1px solid #dfe4e600;
+}
+        .px-nav-box {
+    border-color: #dbe0e200;
+    color: #2c333e;
+}
+
+.px-nav, .px-nav-item a {
+    color: #ffffff;
+}
+.px-nav-dropdown-menu {
+    background: #144653;
+}
+.px-nav-dropdown-menu .px-nav-dropdown-menu .px-nav-item>a, .px-nav-dropdown-menu .px-nav-item+.px-nav-item>a {
+    border-top: 1px solid #e2dbe117;
+}
+.px-nav-item a:active, .px-nav-item a:focus, .px-nav-item a:hover {
+    color:  #a2f0d0;
+    background: 0 0;
+}
+.px-nav-collapse {
+    height: 100%;
+    position: fixed;
+}
+.px-nav {
+    position: fixed;
+    height: 100%;
+}
+   </style>
+    
 
 </head>
 
@@ -549,22 +603,18 @@ margin-left: 24px;
         }
     </script>
   <!-- Nav -->
-  <nav class="px-nav px-nav-left" style="background-color:  #132a42">
+ <nav class="px-nav px-nav-left " style="background-color:  #132a42">
     <button type="button" class="px-nav-toggle" data-toggle="px-nav">
       <span class="px-nav-toggle-arrow"></span>
       <span class="navbar-toggle-icon"></span>
       <span class="px-nav-toggle-label font-size-11">HIDE MENU</span>
     </button>
 
-    <ul class="px-nav-content">
+    <ul class="px-nav-content" style="width: auto;">
 
 
          <li class="px-nav-box p-a-3 b-b-1" id="demo-px-nav-box">
-          <style type="text/css">
-          .px-nav-box {
-    border-color: #dbe0e200;
-    color: #2c333e;
-}</style>
+      
         <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <img src="/assets/shopidea.png" alt="" class="pull-xs-left m-r-2 border-round" style="width: 54px; height: 54px;">
         <div class="font-size-16"><span class="font-weight-light" style="color: white;">Welcome </span><strong></strong></div>
@@ -573,7 +623,7 @@ margin-left: 24px;
       </li>
 
       <li class="px-nav-item px-nav-dropdown" style="color:white;" style="background-color:  #132a42;">
-        <style type="text/css">
+<!--         <style type="text/css">
         .px-nav-content>.px-nav-item>.px-nav-dropdown-menu, .px-nav-content>.px-nav-item>a, .px-nav-dropdown-menu-title 
         {
     border-bottom: 1px solid #dfe4e600;
@@ -592,49 +642,107 @@ margin-left: 24px;
     color:  #a2f0d0;
     background: 0 0;
 }
-.px-nav-collapse {
-    
-    min-height: 142.7%;
-}
-.px-nav {
-    position: absolute;
-    height: auto;
-    min-height: auto;
-}
 
       </style>
-    
+     -->
 
         
 
-        <a href="#"><i class="px-nav-icon fa fa-home" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Dashboard</span></a>
+        <a href=""><i class="px-nav-icon fa fa-home" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Dashboard</span></a>
 
 
+        <ul class="px-nav-dropdown-menu" style="color:white;"  style="background-color:  #132a42;">
+          
+
+                    <li class="px-nav-item"><a href="/"><span class="px-nav-label" > &nbsp  &nbsp  &nbsp Progress report</span></a></li>
+          <li class="px-nav-item"><a href="/"><span class="px-nav-label"> &nbsp  &nbsp  &nbsp Analysis</span></a></li>
+          
+        </ul>
       </li>
-     
+      <!-- <li class="px-nav-item">
+        <a href="javascript:forms()"><i class="px-nav-icon fa fa-edit" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Registration</span></a>
+          
+
+                   
+      </li> -->
        <li class="px-nav-item px-nav-dropdown">
-        <a href="#"><i class="px-nav-icon fa fa-certificate" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Timetable</span></a>
+        <a href=""><i class="px-nav-icon fa fa-certificate" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Timetable</span></a>
 
        <ul class="px-nav-dropdown-menu">
           <li class="px-nav-item"><a href="/subjects"><span class="px-nav-label">&nbsp &nbsp &nbsp View Timetable</span></a></li>
           <li class="px-nav-item"><a href="/timetables"><span class="px-nav-label">&nbsp &nbsp &nbsp Add Timetable</span></a></li>
-         <!--  <li class="px-nav-item"><a href="/accessories"><span class="px-nav-label">&nbsp &nbsp &nbsp Accessories</span></a></li>
- -->
+          
+
        
         </ul>
       </li>
       <li class="px-nav-item px-nav-dropdown">
-        <a href="#"><i class="px-nav-icon fa fa-cubes" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Teachers</span></a>
+        <a href=""><i class="px-nav-icon fa fa-cubes" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Teachers</span></a>
         <ul class="px-nav-dropdown-menu" style="color:white;"  style="background-color:  #132a42;">
           
 
                     <li class="px-nav-item"><a href="/teacherdata/index"><span class="px-nav-label" >&nbsp &nbsp &nbsp Daily Lectures</span></a></li>
        
-          <li class="px-nav-item"><a href="/offlecture/index"><span class="px-nav-label">&nbsp &nbsp &nbsp Off Lectures</span></a></li>
+          <li class="px-nav-item"><a href="/offlecture/index"><span class="px-nav-label">&nbsp &nbsp &nbsp Offlectures</span></a></li>
           
         </ul>
       </li>
-  
+     <!--  <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-sign-in" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Total purchase</span></a>
+        <ul class="px-nav-dropdown-menu">
+          
+          <li class="px-nav-item"><a href="/purchases"><span class="px-nav-label">&nbsp &nbsp &nbsp Add purchase</span></a></li>
+          <li class="px-nav-item"><a href="/purchase/monthpurchase"><span class="px-nav-label">&nbsp &nbsp &nbsp Monthly purchase</span></a></li>
+           <li class="px-nav-item"><a href="/delivered/index"><span class="px-nav-label">&nbsp &nbsp &nbsp Delivery at warehouse</span></a></li>
+       
+       
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-sign-out" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Total sales</span>
+        <ul class="px-nav-dropdown-menu">
+          
+          <li class="px-nav-item"><a href="/sales"><span class="px-nav-label">&nbsp &nbsp &nbsp Add sales</span></a></li>
+          <li class="px-nav-item"><a href="/sale/monthsale"><span class="px-nav-label">&nbsp &nbsp &nbsp Monthly sales</span></a></li>
+          
+       
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-gears" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Manufacturing</span></a>
+        <ul class="px-nav-dropdown-menu">
+          
+          <li class="px-nav-item"><a href="ui-tabs.html"><span class="px-nav-label">&nbsp &nbsp &nbsp Projects</span></a></li>
+          <li class="px-nav-item"><a href="ui-modals.html"><span class="px-nav-label">&nbsp &nbsp &nbsp Bill of material</span></a></li>
+          
+       
+        </ul>
+      </li> -->
+
+
+         <!--   <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-gears" style="color: white;"></i><span class="px-nav-label" style="color: white;">  &nbsp &nbsp &nbsp Offshore</span></a>
+        <ul class="px-nav-dropdown-menu">
+          
+          <li class="px-nav-item"><a href="/offshores"><span class="px-nav-label">&nbsp &nbsp &nbsp Invoices</span></a></li>
+          <li class="px-nav-item"><a href="ui-modals.html"><span class="px-nav-label">&nbsp &nbsp &nbsp Bill of material</span></a></li>
+          
+       
+        </ul>
+      </li> -->
+
+
+
+
+
+<!-- 
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-square" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Set up</span></a>
+      </li>
+
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-plus" style="color: white;"></i><span class="px-nav-label" style="color: white;"> &nbsp &nbsp &nbsp Integration</span></a>
+      </li> -->
     </ul> 
   </nav>
 </div>
@@ -664,6 +772,19 @@ margin-left: 24px;
         </div> 
 </span >
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -680,9 +801,7 @@ margin-left: 24px;
       </ul>
     </div>
   </nav>
-
   <div class="content">
-  
     <div class="container wow fadeInUp delay-03s">
       <div class="row">
 
@@ -1556,6 +1675,9 @@ this.activeTarget=b,this.clear();var c=this.selector+'[data-target="'+b+'"],'+th
 
 <!-- 
 <script src="/assets/modernizr.js"></script> -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -1565,6 +1687,7 @@ this.activeTarget=b,this.clear();var c=this.selector+'[data-target="'+b+'"],'+th
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
 <script src=" https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
 
@@ -1575,7 +1698,7 @@ this.activeTarget=b,this.clear();var c=this.selector+'[data-target="'+b+'"],'+th
   <script src="/assets/pixeladmin.min.js"></script>
 
   <!-Your scripts -->
-<!--   <script src="/assets/app.js"></script> --> -->
+<!--   <script src="/assets/app.js"></script> --> 
 <!-- <script src="/assets/main.js"></script>
   <script src="/assets/jquery.min.js"></script>
   <script src="/assets/bootstrap.min.js"></script>
