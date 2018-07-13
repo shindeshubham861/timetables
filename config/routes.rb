@@ -14,6 +14,13 @@ Rails.application.routes.draw do
   resources :teacherdata
   resources :offlecture
 
+   get  :"/timetableapi", :to => "api#test"
+   get  :"/subjectapi", :to => "api#testone"
+   get  :"/teacherapi", :to => "api#testtwo"
+
+
+
+
    post :"/ge", :to => "update#create" 
    post :"/go", :to => "update#create"
    post :"/subject", :to => "update#create"
