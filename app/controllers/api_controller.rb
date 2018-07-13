@@ -1,6 +1,6 @@
 class ApiController < ApplicationController
 	skip_before_action :verify_authenticity_token
-	skip_before_action :authenticate_user!
+	
 	def test
 		render :json => Timetable.all.as_json(:only => [:id, :lecture, :standard, :division, :subject, :teacher, :day])
 		
@@ -16,4 +16,4 @@ class ApiController < ApplicationController
 		
 	end
 end
-end
+
