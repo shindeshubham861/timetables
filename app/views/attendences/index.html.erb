@@ -1,0 +1,302 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+
+<p id="notice"><%= notice %></p>
+
+<style type="text/css">
+  #example {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+     margin-top: 90px;
+     height: 5px;
+}
+
+#example td, #example th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 10px;
+    height: 5px;
+}
+.dataTables_wrapper {
+    position: relative;
+    margin-top: 0px;
+}
+
+#example tr, #example td{
+  background-color: #f2f2f2;
+
+}
+
+#example tr, #example td:hover {background-color: #ddd;}
+
+#example th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    width: 10px;
+}
+   .sees {
+    top: 10px;
+    color: #fff;
+    border-color: #ca5e51;
+    background: #e46050;
+    margin-top: 170px;
+}
+.btn-get{
+        color: #fff;
+    border-color: #ca5e51;
+    background: #e46050;
+}
+.dataTables_wrapper .dataTables_filter input {
+    margin-left: 0.5em;
+    color: black;
+}
+.page-header {
+    
+    border-bottom: 1px solid;
+        border-bottom-color: currentcolor;
+    margin-top: 45px;
+    margin-left: 60px;
+}
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: aqua;
+}
+.dataTables_wrapper label {
+    margin: auto;
+    white-space: nowrap;
+    color: white;
+    
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    cursor: default;
+    color: white;
+    border: 1px solid transparent;
+    background: transparent;
+    box-shadow: none;
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    color: #333;
+    color: whitesmoke;
+}
+hr{
+border:0;
+border-top:1px solid #ccc;
+margin-bottom:-10px
+}
+div#main{
+width:828px;
+height:764px;
+margin:0 auto;
+font-family:'Arvo',serif
+}
+div#first{
+width:350px;
+height:740px;
+padding:0 25px 20px;
+float:left;
+text-align:center
+}
+.button2 {
+    width: 90px;
+    height: 30px;
+    border: none;
+    outline: none;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 14px;
+    background-color: #819aa5;
+    text-shadow: 0 1px rgba(0,0,0,0.4);
+    font-weight: 700;
+    background-image: url(../images/1.png);
+    background-repeat: no-repeat;
+    background-position: 200px;
+
+}
+.stl{
+  color: white;
+  font-size:15px;
+  color:#248689;
+}
+/*.button2:active{
+padding-top:2px;
+box-shadow:none
+}
+*/
+</style>
+ <div class="page-header">
+      <h1><span class="text-muted font-weight-light" style="font-size:25px; color:#248689;"><i class="page-header-icon ion-ios-keypad" ></i><b>Teacher Attendences</b></span></h1>
+      <span id="day" class="text-muted font-weight-light" style="font-size:25px; color:#248689; margin-left: 35%;"></span> 
+      <span id="dv1" class="text-muted font-weight-light" style="font-size:19px; color: red; margin-left: 5px;"></span>
+      <span id="dv2" class="text-muted font-weight-light" style="font-size:15px; color:white; margin-left: 5px;"></span>
+  </div>
+ <marquee class="stl">Please click on Checkbox carefully and submit to save Attendance .</marquee>
+<!-- <input type="text" id="prakash" > -->
+<table id="example">
+  <thead>
+    <tr>
+      <th style="width: 40%;"><center>Teacher</center></th>
+      <th style="width: 40%;"><center>Date</center></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teachers.each do |teacher| %>
+      <tr>
+
+        <td style="width: 40%;font-size:20px" id="a1">
+       <center><%= teacher.name%> </center>
+        </td>
+        <td style="width: 40%;">
+            <center>          
+            <div class="pretty p-default">
+                <input type="checkbox" id="myCheck" />
+                <div class="state">
+                    <label></label>
+                </div>
+            </div>
+            </center>
+        </td>
+        <td>
+          <center>
+            <div class="btn1">
+                <input class="button2" type="button"  value="Submit" id="botton" onclick="attend('<%=teacher.name%>')" >
+            </div>
+          </center>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+
+<script type="text/javascript">
+var k;
+
+
+function attend(k){
+var x = document.getElementById("myCheck").checked;
+if (x== false) {
+      alert("Please select checkbox first !!")
+}
+
+ if ( x == true) {
+  var shubh =k; 
+  var ttm = document.getElementById('day').innerHTML;
+  // alert(shubh);
+  // document.getElementById("prakash").value=shubh;
+    var d = new Date();
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    var n = weekday[d.getDay()];
+    var year= d.getFullYear();
+    var month= d.getMonth() +1;
+    var date = d.getDate();
+     var fuldate= date+"-"+month+"-"+year;
+
+     var tm = document.getElementById('dv2').innerHTML;
+78]opiu
+     var data  =  
+{
+    "teacher": shubh,
+    "day": ttm,
+    "date": fuldate,
+    "time": tm
+
+};
+// alert(JSON.stringify(data));
+$.ajax({
+        url : "/attendence",
+        type : "post",
+        data : { data_value: data }
+    });
+
+  swal( "Attendance Saved!");
+  document.getElementById('botton').style.visibility= 'hidden';
+}
+}
+
+</script>
+
+<script type="text/javascript">
+   function displayDay(){
+         var d = new Date();
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    var n = weekday[d.getDay()];
+    document.getElementById("day").innerHTML = n;
+    }
+function displayTime()
+    {
+        var date_format = '12';
+        var localTime = new Date();
+        var year= localTime.getFullYear();
+        var month= localTime.getMonth() +1;
+        var date = localTime.getDate();
+        var hour = localTime .getHours();
+        var minutes = localTime .getMinutes();
+        var seconds = localTime .getSeconds();
+        var div=document.getElementById("dv1");
+        div.innerText=date+"-"+month+"-"+year;
+        var result  = hour;
+        var ext   = '';
+
+                  if(date_format == '12'){
+            if(hour > 12){
+              ext = 'PM';
+              hour = (hour - 12);
+            
+              if(hour < 10){
+                result = "0" + hour;
+              }else if(hour == 12){
+                hour = "00";
+                ext = 'AM';
+              }
+            }
+            else if(hour < 12){
+              result = ((hour < 10) ? "0" + hour : hour);
+              ext = 'AM';
+            }else if(hour == 12){
+              ext = 'PM';
+            }
+          }
+
+          if(minutes < 10){
+            minutes = "0" + minutes + "1"; 
+          }
+
+          // result = result + ":" + minutes + ' ' + ext; 
+        var div2=document.getElementById("dv2");
+        div2.innerText=result + ":" + minutes + ' ' + ext; 
+
+    }
+</script>

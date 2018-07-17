@@ -1,0 +1,20 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @attendence.teacher %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @attendence.day %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @attendence.date %>
+</p>
+
+<%= link_to 'Edit', edit_attendence_path(@attendence) %> |
+<%= link_to 'Back', attendences_path %>

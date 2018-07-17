@@ -36,7 +36,7 @@
   
   <style type="text/css">
  body { 
-    background-image: url('/assets/board2.jpg');
+    background-image: url('/assets/wood.jpg');
       min-height: 500px;
     background-attachment: fixed;
     background-position: center;
@@ -70,7 +70,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #A56F49;;
     color: white;
 }
   .btn-sert{
@@ -590,20 +590,10 @@ margin-left: 24px;
 
 </head>
 
-<body onload="displayTime();">
+<body onload="displayTime();displayDay();">
 
-    <script language="Javascript" type="text/javascript">
-         
-        function datatables() {
-            window.location.replace("datatables");
-        }
-
-        function forms() {
-            window.location.replace("forms");
-        }
-    </script>
   <!-- Nav -->
- <nav class="px-nav px-nav-left " style="background-color:  #132a42">
+ <nav class="px-nav px-nav-left " style="background-color:  #132a42" >
     <button type="button" class="px-nav-toggle" data-toggle="px-nav">
       <span class="px-nav-toggle-arrow"></span>
       <span class="navbar-toggle-icon"></span>
@@ -808,6 +798,7 @@ margin-left: 24px;
 
 
     <%= yield %>
+    
 
 
       </div>
@@ -1673,16 +1664,9 @@ this.activeTarget=b,this.clear();var c=this.selector+'[data-target="'+b+'"],'+th
 
 
 
-<!-- 
-<script src="/assets/modernizr.js"></script> -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-  <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

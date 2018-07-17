@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :attendences
  root to: "subjects#index"
   get 'offlecture/index'
   get 'teacherdata/index'
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
 
 
 
-
+   post :"/attendence", :to => "attend#create"
    post :"/ge", :to => "update#create" 
    post :"/go", :to => "update#create"
    post :"/subject", :to => "update#create"

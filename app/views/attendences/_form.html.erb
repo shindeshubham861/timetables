@@ -1,0 +1,55 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<%= form_with(model: attendence, local: true) do |form| %>
+  <% if attendence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(attendence.errors.count, "error") %> prohibited this attendence from being saved:</h2>
+
+      <ul>
+      <% attendence.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :teacher %>
+    <%= form.text_field :teacher %>
+  </div>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.text_field :day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.text_field :date ,:id=>"date1" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+        function displayDay(){
+         var d = new Date();
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    var n = weekday[d.getDay()];
+    // document.getElementById("date1").innerHTML = n;
+
+     
+   $(document).ready(function(){
+        $("#date1").val(n);
+   });
+    }
+</script>
