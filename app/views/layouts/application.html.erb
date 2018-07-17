@@ -589,46 +589,17 @@ margin-left: 24px;
 
 <body onload="displayTime();displayDay();">
  <script type="text/javascript">
- var date_format = '12';
+   function displayTime()
+    {
         var localTime = new Date();
         var year= localTime.getFullYear();
         var month= localTime.getMonth() +1;
         var date = localTime.getDate();
-        var hour = localTime .getHours();
+        var hours = localTime .getHours();
         var minutes = localTime .getMinutes();
         var seconds = localTime .getSeconds();
-        var div=document.getElementById("dv1");
-        div.innerText=date+"-"+month+"-"+year;
-        var result  = hour;
-        var ext   = '';
-
-                  if(date_format == '12'){
-            if(hour > 12){
-              ext = 'PM';
-              hour = (hour - 12);
-            
-              if(hour < 10){
-                result = "0" + hour;
-              }else if(hour == 12){
-                hour = "00";
-                ext = 'AM';
-              }
-            }
-            else if(hour < 12){
-              result = ((hour < 10) ? "0" + hour : hour);
-              ext = 'AM';
-            }else if(hour == 12){
-              ext = 'PM';
-            }
-          }
-
-          if(minutes < 10){
-            minutes = "0" + minutes + "1"; 
-          }
-
-          // result = result + ":" + minutes + ' ' + ext; 
-        // var div2=document.getElementById("dv2");
-        // div2.innerText=result + ":" + minutes + ' ' + ext; 
+    
+    } 
 
  </script> 
 
